@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>#003 - Shock</title>
+	<style>
+		body {
+			background-color: black;
+		}
+
+		#typewriter {
+			font-family: monospace;
+			font-size: 92px;
+			color: red;
+			background-color: black;
+			height: 800px;
+			width: 900px;
+			overflow: auto;
+			border-right: 2px solid black;
+			animation: typing 1s steps(0) infinite;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin: auto;
+			scrollbar-width: none;
+		}
+		
+		#typewriter::-webkit-scrollbar {
+		  width: 0;
+		}
+		
+		@keyframes typing {
+			from { width: 0 }
+			to { width: 100% }
+		}
+	</style>
+</head>
+<body>
+	<div id="typewriter"></div>
+	<script>
+		const char = "🕱";
+		let index = 0;
+		
+		function type() {
+			const typewriter = document.getElementById("typewriter");
+			typewriter.textContent = char.repeat(index++);
+			
+			setTimeout(type, 250);
+			typewriter.scrollTop = typewriter.scrollHeight;
+		}
+		
+		type();
+	</script>
+</body>
+</html>
