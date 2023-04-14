@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>#000 - Counter</title>
+  <style>
+    body {
+  background-image: url("img/bg0.gif");
+  background-repeat: repeat-z;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    #noise-box {
+      width: 256px;
+      height: 256px;
+      background-color: black;
+      margin-bottom: 20px;
+    }
+
+    #counter {
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body>
+  <div id="noise-box"></div>
+  <div id="counter"></div>
+  <script>
+    const noiseBox = document.getElementById('noise-box');
+    const counter = document.getElementById('counter');
+    let clickCount = 0;
+
+    noiseBox.addEventListener('click', () => {
+      clickCount++;
+      counter.textContent = `${clickCount}`;
+
+      // Generate random noise for each pixel in the box
+      const imageData = new ImageData(256, 256);
+      for (let i = 0; i < imageData.data.length; i += 4) {
+        imageData.data[i] = Math.floor(Math.random() * 256);
+        imageData.data[i + 1] = Math.floor(Math.random() * 256);
+        imageData.data[i + 2] = Math.floor(Math.random() * 256);
+        imageData.data[i + 3] = 255;
+      }
+      const canvas = document.createElement('canvas');
+      canvas.width = 256;
+      canvas.height = 256;
+      canvas.getContext('2d').putImageData(imageData, 0, 0);
+      noiseBox.style.backgroundImage = `url(${canvas.toDataURL()})`;
+    });
+  </script>
+</body>
+</html>
