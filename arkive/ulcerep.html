@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    background-color: #B90017;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    margin: 0;
+    color: white;
+  font-family: 'Courier New', monospace;
+}
+#playerContainer {
+    text-align: center;
+    margin-top: 20px;
+}
+button {
+    border: none;
+    color: white;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: black;
+}
+button:active {
+    background-color: white;
+}
+#songList {
+    margin-top: 20px;
+}
+.song {
+    cursor: pointer;
+}
+.song.playing {
+    font-weight: bold;
+}
+#progressBar {
+    width: 100%;
+    height: 20px;
+    background-color: #ddd;
+}
+#progressBar div {
+    height: 100%;
+    width: 0%;
+    background-color: #4caf50;
+}
+</style>
+</head>
+<body>
+
+<div id="playerContainer">
+<br>
+<br>
+<h2>The Yung Ulcer EP</h2>
+<br>
+<audio id="player" src="https://www.bensound.com/bensound-music/bensound-ukulele.mp3"></audio>
+
+<button  id="prevButton" onclick="prevSong()"><<</button>
+<button id="playPauseButton" onclick="playPause()">></button>
+<button id="nextButton" onclick="nextSong()">>></button>
+<br>
+<br>
+<div id="progressBar" onclick="scrub(event)"><div></div></div>
+<br>
+<br>
+<div id="songList"></div>
+<br>
+<br>
+<img src="/img/ulcerep.jpg" alt="The Yung Ulcer EP Cover Art" style="width:50%;">
+<script>
+var songs = [
+  {name: "You Know What?", file: "/dirtyblonde/01.mp3"},
+  {name: "Toddler", file: "https://example.com/Toddler.mp3"},
+  {name: "Guilty Conscience", file: "https://example.com/GuiltyConscience.mp3"},
+  {name: "Ulcer Chatter", file: "https://example.com/UlcerChatter.mp3"},
+  {name: "Austin Powers", file: "https://example.com/AustinPowers.mp3"},
+  {name: "I Keep My Hands Sanitized", file: "https://example.com/IKeepMyHandsSanitized.mp3"},
+  {name: "People", file: "https://example.com/People.mp3"}
+];
+var songIndex = 0;
+var audioPlayer = document.getElementById('player');
+var songList = document.getElementById('songList');
+var playPauseButton = document.getElementById('playPauseButton');
+var progressBar = document.getElementById('progressBar');
+
+audioPlayer.onended = function() {
+   nextSong();
+};
+
+audioPlayer.ontimeupdate = function() {
+   var progress = audioPlayer.currentTime / audioPlayer.duration * 100 + '%';
+   progressBar.children[0].style.width = progress; 
+};
+
+function playPause() {
+    if (audioPlayer.paused) {
+        audioPlayer.play();
+        playPauseButton.innerText = 'I I';
+    } else {
+        audioPlayer.pause();
+        playPauseButton.innerText = '>';
+    }
+}
+
+function nextSong() {
+    songIndex++;
+    if (songIndex > songs.length - 1) {
+        songIndex = 0;
+    }
+    playSong();
+}
+
+function prevSong() {
+    songIndex--;
+    if (songIndex < 0) {
+        songIndex = songs.length - 1;
+    }
+    playSong();
+}
+
+function playSong() {
+    audioPlayer.src = songs[songIndex].file;
+    audioPlayer.play();
+    playPauseButton.innerText = 'I I';
+    updateSongList();
+}
+
+function updateSongList() {
+   songList.innerHTML = songs.map(function(song, index) {
+       return '<div class="song' + (index === songIndex ? ' playing' : '') + '" onclick="selectSong(' + index + ')">' + song.name + '</div>';
+   }).join('');
+}
+
+function selectSong(index) {
+   songIndex = index;
+   playSong();
+}
+
+function scrub(event) {
+   var x = event.offsetX / progressBar.offsetWidth * audioPlayer.duration; 
+   audioPlayer.currentTime = x; 
+}
+
+updateSongList();
+</script>
+
+</div>
+
+</body>
+</html>
