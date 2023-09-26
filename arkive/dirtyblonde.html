@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dirty Blonde</title>
+<style>
+body {
+    background-color: #AEA89A;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    margin: 0;
+    color: white;
+  font-family: 'Courier New', monospace;
+}
+#playerContainer {
+    text-align: center;
+    margin-top: 20px;
+}
+button {
+    border: none;
+    color: white;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: black;
+}
+button:active {
+    background-color: white;
+}
+#songList {
+    margin-top: 20px;
+}
+.song {
+    cursor: pointer;
+}
+.song.playing {
+    font-weight: bold;
+}
+#progressBar {
+    width: 100%;
+    height: 20px;
+    background-color: #ddd;
+}
+#progressBar div {
+    height: 100%;
+    width: 0%;
+    background-color: #4caf50;
+}
+</style>
+</head>
+<body>
+
+<div id="playerContainer">
+<br>
+<br>
+<h2>Dirty Blonde</h2>
+<br>
+<audio id="player" src="/arkive/ulcerep/what.mp3"></audio>
+
+<button  id="prevButton" onclick="prevSong()"><<</button>
+<button id="playPauseButton" onclick="playPause()">></button>
+<button id="nextButton" onclick="nextSong()">>></button>
+<br>
+<br>
+<div id="progressBar" onclick="scrub(event)"><div></div></div>
+<br>
+<br>
+<div id="songList"></div>
+<br>
+<br>
+<img src="/img/dirtyblonde.jpg" alt="Dirty Blonde Cover Art" style="width:50%;">
+<script>
+var songs = [
+  {name: "No High Fives", file: "/dirtyblonde/01.mp3"},
+  {name: "Vanmillen", file: "/dirtyblonde/02.mp3"},
+  {name: "What A Lifetime!", file: "/dirtyblonde/03.mp3"},
+  {name: "Sweet Nothings", file: "/dirtyblonde/04.mp3"},
+  {name: "Pick Up The Phone", file: "/dirtyblonde/05.mp3"},
+  {name: "Meltdown", file: "/dirtyblonde/06.mp3"},
+  {name: "Arthur", file: "/dirtyblonde/07.mp3"},
+  {name: "Vantablack", file: "/dirtyblonde/08.mp3"},
+  {name: "Separate", file: "/dirtyblonde/09.mp3"},
+  {name: "Catch A Drift", file: "/dirtyblonde/10.mp3"}
+];
+var songIndex = 0;
+var audioPlayer = document.getElementById('player');
+var songList = document.getElementById('songList');
+var playPauseButton = document.getElementById('playPauseButton');
+var progressBar = document.getElementById('progressBar');
+
+audioPlayer.onended = function() {
+   nextSong();
+};
+
+audioPlayer.ontimeupdate = function() {
+   var progress = audioPlayer.currentTime / audioPlayer.duration * 100 + '%';
+   progressBar.children[0].style.width = progress; 
+};
+
+function playPause() {
+    if (audioPlayer.paused) {
+        audioPlayer.play();
+        playPauseButton.innerText = 'I I';
+    } else {
+        audioPlayer.pause();
+        playPauseButton.innerText = '>';
+    }
+}
+
+function nextSong() {
+    songIndex++;
+    if (songIndex > songs.length - 1) {
+        songIndex = 0;
+    }
+    playSong();
+}
+
+function prevSong() {
+    songIndex--;
+    if (songIndex < 0) {
+        songIndex = songs.length - 1;
+    }
+    playSong();
+}
+
+function playSong() {
+    audioPlayer.src = songs[songIndex].file;
+    audioPlayer.play();
+    playPauseButton.innerText = 'I I';
+    updateSongList();
+}
+
+function updateSongList() {
+   songList.innerHTML = songs.map(function(song, index) {
+       return '<div class="song' + (index === songIndex ? ' playing' : '') + '" onclick="selectSong(' + index + ')">' + song.name + '</div>';
+   }).join('');
+}
+
+function selectSong(index) {
+   songIndex = index;
+   playSong();
+}
+
+function scrub(event) {
+   var x = event.offsetX / progressBar.offsetWidth * audioPlayer.duration; 
+   audioPlayer.currentTime = x; 
+}
+
+updateSongList();
+</script>
+
+</div>
+
+</body>
+</html>
