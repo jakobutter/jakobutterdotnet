@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Teddy (Archive Collection)</title>
+<style>
+body {
+    background-color: #524D68;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    margin: 0;
+    color: white;
+  font-family: 'Courier New', monospace;
+}
+#playerContainer {
+    text-align: center;
+    margin-top: 20px;
+}
+button {
+    border: none;
+    color: white;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: black;
+}
+button:active {
+    background-color: white;
+}
+#songList {
+    margin-top: 20px;
+}
+.song {
+    cursor: pointer;
+}
+.song.playing {
+    font-weight: bold;
+}
+#progressBar {
+    width: 100%;
+    height: 20px;
+    background-color: #ddd;
+}
+#progressBar div {
+    height: 100%;
+    width: 0%;
+    background-color: #4caf50;
+}
+</style>
+</head>
+<body>
+
+<div id="playerContainer">
+<br>
+<br>
+<h2>Teddy (Archive Collection)</h2>
+<br>
+<audio id="player" src="/arkive/teddy/teddy.mp3"></audio>
+
+<button  id="prevButton" onclick="prevSong()"><<</button>
+<button id="playPauseButton" onclick="playPause()">></button>
+<button id="nextButton" onclick="nextSong()">>></button>
+<br>
+<br>
+<div id="progressBar" onclick="scrub(event)"><div></div></div>
+<br>
+<br>
+<div id="songList"></div>
+<br>
+<br>
+<img src="/teddy/teddy.jpg" alt="Teddy Archive Collection Cover Art" style="width:50%;">
+<script>
+var songs = [
+  {name: "Teddy Boy", file: "/arkive/teddy/teddy.mp3"},
+  {name: "DCS", file: "/arkive/teddy/dcs.mp3"},
+  {name: "In Dreams", file: "/arkive/teddy/dreams.mp3"},
+  {name: "Sic Semper", file: "/arkive/teddy/sic.mp3"},
+  {name: "Carcass", file: "/arkive/teddy/carcass.mp3"},
+  {name: "No Safety", file: "/arkive/teddy/safety.mp3"},
+  {name: "Thru The Peephole", file: "/arkive/teddy/peep.mp3"},
+  {name: "Court Ordered", file: "/arkive/teddy/court.mp3"},
+  {name: "Tall Mf", file: "/arkive/teddy/tall.mp3"},
+  {name: "With Shorty Freestyle", file: "/arkive/teddy/shorty.mp3"},
+  {name: "Smith & Methson", file: "/arkive/teddy/smith.mp3"},
+  {name: "Yellowbelly (Let Him Cook)", file: "/arkive/teddy/cook.mp3"},
+  {name: "Fieldhouse", file: "/arkive/teddy/field.mp3"},
+  {name: "Nice Day Off", file: "/arkive/teddy/nice.mp3"},
+  {name: "Gabriela", file: "/arkive/teddy/gab.mp3"},
+  {name: "Dishonor", file: "/arkive/teddy/dis.mp3"},
+  {name: "Except For One Thing", file: "/arkive/teddy/except.mp3"},
+  {name: "New Warrant", file: "/arkive/teddy/warrant.mp3"}
+];
+var songIndex = 0;
+var audioPlayer = document.getElementById('player');
+var songList = document.getElementById('songList');
+var playPauseButton = document.getElementById('playPauseButton');
+var progressBar = document.getElementById('progressBar');
+
+audioPlayer.onended = function() {
+   nextSong();
+};
+
+audioPlayer.ontimeupdate = function() {
+   var progress = audioPlayer.currentTime / audioPlayer.duration * 100 + '%';
+   progressBar.children[0].style.width = progress; 
+};
+
+function playPause() {
+    if (audioPlayer.paused) {
+        audioPlayer.play();
+        playPauseButton.innerText = 'I I';
+    } else {
+        audioPlayer.pause();
+        playPauseButton.innerText = '>';
+    }
+}
+
+function nextSong() {
+    songIndex++;
+    if (songIndex > songs.length - 1) {
+        songIndex = 0;
+    }
+    playSong();
+}
+
+function prevSong() {
+    songIndex--;
+    if (songIndex < 0) {
+        songIndex = songs.length - 1;
+    }
+    playSong();
+}
+
+function playSong() {
+    audioPlayer.src = songs[songIndex].file;
+    audioPlayer.play();
+    playPauseButton.innerText = 'I I';
+    updateSongList();
+}
+
+function updateSongList() {
+   songList.innerHTML = songs.map(function(song, index) {
+       return '<div class="song' + (index === songIndex ? ' playing' : '') + '" onclick="selectSong(' + index + ')">' + song.name + '</div>';
+   }).join('');
+}
+
+function selectSong(index) {
+   songIndex = index;
+   playSong();
+}
+
+function scrub(event) {
+   var x = event.offsetX / progressBar.offsetWidth * audioPlayer.duration; 
+   audioPlayer.currentTime = x; 
+}
+
+updateSongList();
+</script>
+
+</div>
+
+</body>
+</html>
