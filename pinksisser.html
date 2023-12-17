@@ -1,8 +1,7 @@
-<!DOCTYPE html>
 <html>
 <head>
-  <style>
-    /* Use external CSS to style the body, header, countdown, and image elements */
+<title>Countdown to Jan 10, 2024</title>
+<style>
     body {
       background-color: black; /* Set the background color to black */
       display: flex; /* Use flexbox to center the elements */
@@ -12,58 +11,61 @@
       height: 100vh; /* Set the height of the body to the viewport height */
       margin: 0; /* Remove the default margin */
     }
-    h1 {
-      font-family: Arial, sans-serif; /* Set the font family to Arial */
-      font-weight: bold; /* Set the font weight to bold */
-      color: white; /* Set the font color to white */
-    }
-    p {
-      font-family: Arial, sans-serif; /* Set the font family to Arial */
-      font-weight: bold; /* Set the font weight to bold */
-      color: white; /* Set the font color to white */
-    }
-    img {
-      width: 300px; /* Set the width of the image */
-      height: auto; /* Set the height of the image to maintain the aspect ratio */
-    }
-  </style>
-  <script>
-    // Use external JavaScript to create a countdown timer
-    // Get the countdown element by its id
-    var countdown = document.getElementById("countdown");
-    // Set the target date to January 10, 2024
-    var targetDate = new Date("January 10, 2024 00:00:00").getTime();
-    // Update the countdown every second
-    var timer = setInterval(function() {
-      // Get the current date and time
-      var currentDate = new Date().getTime();
-      // Calculate the difference between the target date and the current date
-      var difference = targetDate - currentDate;
-      // If the difference is positive, the target date has not passed yet
-      if (difference > 0) {
-        // Calculate the days, hours, minutes, and seconds from the difference
-        var days = Math.floor(difference / (1000 * 60 * 60 * 24));
-        var hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((difference % (1000 * 60)) / 1000);
-        // Display the countdown in the format "dd days hh:mm:ss"
-        countdown.innerHTML = days + " days " + hours + ":" + minutes + ":" + seconds;
-      } else {
-        // If the difference is negative or zero, the target date has passed or is today
-        // Clear the timer
-        clearInterval(timer);
-        // Display a message
-        countdown.innerHTML = "PINK SISSER EP is out now!";
-      }
-    }, 1000); // Repeat every 1000 milliseconds (1 second)
-  </script>
+#countdown {
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+        color: white;
+  text-align: center;
+}
+#image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
+  height: 200px;
+}
+#title {
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+        color: white;
+  text-align: center;
+}
+</style>
+<script>
+// Set the target date
+var targetDate = new Date("Jan 10, 2024 00:00:00").getTime();
+
+// Update the countdown every second
+var countdown = setInterval(function() {
+
+  // Get the current date and time
+  var currentDate = new Date().getTime();
+
+  // Calculate the difference between the target and current date
+  var difference = targetDate - currentDate;
+
+  // Convert the difference to days, hours, minutes and seconds
+  var days = Math.floor(difference / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+  // Display the countdown in the element with id="countdown"
+  document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  // If the difference is less than zero, stop the countdown and display a message
+  if (difference < 0) {
+    clearInterval(countdown);
+    document.getElementById("countdown").innerHTML = "The date has passed!";
+  }
+}, 1000);
+</script>
 </head>
 <body>
-  <!-- Use HTML elements to create the content of the website -->
-  <h1>PINK SISSER EP</h1> <!-- A header with the title of the EP -->
-  <p id="countdown"></p> <!-- A paragraph with the countdown timer -->
-  <img src="img/pinksisser.png" alt="PINK SISSER EP cover"> <!-- An image with the EP cover -->
+<h1 id="title">PINK SISSER EP</h1>
+<h2 id="title">1/10/24</h2>
+<img src="/img/IMG_3933.jpeg" alt="Pink Sisser" id="image">
+<h1 id="countdown"></h1>
 </body>
 </html>
-
-
