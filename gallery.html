@@ -116,6 +116,17 @@ body {
         // Display the result
         document.write(`<h5>This page is ${daysSinceBirth} days old!!!</h5>`);
     </script>
+					                 <script>
+        // Set the birthdate
+        const editdate = new Date('March 5, 2024');
+
+        // Calculate the days since birthdate
+        const currentDate = new Date();
+        const daysSinceEdit = Math.floor((currentDate - editdate) / (1000 * 60 * 60 * 24));
+
+        // Display the result
+        document.write(`<h5>The most recent edit was made ${daysSinceBirth} days ago!!!</h5>`);
+    </script>
                
                 <br>
                 
