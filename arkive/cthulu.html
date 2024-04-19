@@ -2,14 +2,10 @@
 <html>
 <head>
 <title>CTHULU BLACKPILL</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 body {
     background-color: #a49d8f;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    height: 100vh;
-    margin: 0;
     color: black;
   font-family: 'Times New Roman', monospace;
 }
@@ -33,6 +29,7 @@ button {
 }
 button:active {
     background-color: #ff0000;
+    
 }
 #songList {
     margin-top: 20px;
@@ -42,6 +39,11 @@ button:active {
 }
 .song.playing {
     font-weight: bold;
+    background-image: linear-gradient(45deg,#000000,#FF0000,#000000,#FF0000,#000000);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   background-size: 400% 400%;
+   animation: rainbow 10s ease infinite;
 }
 #progressBar {
     width: 100%;
@@ -53,6 +55,12 @@ button:active {
     width: 0%;
     background-color: #ff0000;
 }
+@keyframes rainbow {
+   0% {background-position:0% 50%}
+   50% {background-position:100% 50%}
+   100% {background-position:0% 50%}
+}
+
 </style>
 </head>
 <body>
