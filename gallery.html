@@ -59,6 +59,19 @@ a:link,a:visited {
             color: #007F00;
   font-style: italic;
         }
+ .hover-image {
+    position: relative;
+    display: inline-block;
+  }
+
+  .hover-image img {
+    display: block;
+    transition: opacity 0.3s ease;
+  }
+
+  .hover-image img.top:hover {
+    opacity: 0;
+  }
   </style>
 </head>
 <body>
@@ -137,8 +150,11 @@ a:link,a:visited {
                 <p class="caption">"Delulu Cthulu"</p>
             </td>
             <td>
-                <img src="img/black.png" alt="Image 6" width="512">
-                <p class="caption"></p>
+<div class="hover-image">
+  <img src="img/8.png" alt="Image 1" width="512">
+  <img src="img/7.png" alt="Image 2" width="512" class="top" style="position: absolute; top: 0; left: 0;">
+                <p class="caption">"Delulu Cthulu"</p>
+</div>
             </td>
         </tr>
         <!-- Repeat rows as needed -->
