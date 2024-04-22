@@ -40,7 +40,7 @@ body {
 							<table border="0" width="100%" cellspacing="0" cellpadding="0">
 								<tr>
 									<td height="47" valign="top" width="38%">
-<h2><span style="color: #a1f4c3">jakobutter.net</span></h2></td>
+<h2 id="text">jakobutter.net</h2></td>
 									<td><br>
                                     </td>
 								</tr>
@@ -183,7 +183,18 @@ body {
 </table>
 
 </div>
+<script>
+// Function to set the color of text
+function setColor(color) {
+  document.getElementById('text').style.color = '#' + color;
+}
 
+// Fetch the color from the text file
+fetch('color.txt')
+  .then(response => response.text())
+  .then(text => setColor(text.trim())) // Remove whitespace and set the color
+  .catch(error => console.error('Error fetching color:', error));
+</script>
 
 </body>
 
