@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Dynamic Text Color</title>
+</head>
+<body>
+<p id="text">This text will change color based on the text file.</p>
+
+<script>
+// Function to set the color of text
+function setColor(color) {
+  document.getElementById('text').style.color = '#' + color;
+}
+
+// Fetch the color from the text file
+fetch('color.txt')
+  .then(response => response.text())
+  .then(text => setColor(text.trim())) // Remove whitespace and set the color
+  .catch(error => console.error('Error fetching color:', error));
+</script>
+</body>
+</html>
