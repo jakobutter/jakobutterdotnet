@@ -1,0 +1,39 @@
+body {
+	background-color: #000000;
+	background-image: url("img/cthulubg.gif");
+	height: 100%;
+}
+
+    p {
+   color: #FF0072;
+    }
+    a {
+   color: #FF0072;
+      text-decoration: none;
+    }
+      p:hover {
+   color: #FFFFFF;
+   }
+  a:hover {
+   color: #FFFFFF;
+   target-new: #FFFFFF;
+      text-decoration: underline;
+  }
+    h1 {
+   color: #FF0072;
+    }
+    h2 {
+   color: #FF0072;
+    }
+    h3 {
+   color: #007F00;
+    }
+    h1:hover {
+   color: #FFFFFF;
+    }
+    h2:hover {
+   color: #FFFFFF;
+    }
+    h3:hover {
+   color: #FFFFFF;
+    }
