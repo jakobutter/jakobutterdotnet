@@ -10,6 +10,7 @@ body {
     }
     a {
    color: #007F00;
+      text-decoration: none;
     }
       p:hover {
    color: #FFFFFF;
@@ -21,10 +22,10 @@ body {
    color: #007F00;
     }
     div {
-   color: #007F00;
+background-color: #007F00;
     }
   a:hover {
    color: #FFFFFF;
    target-new: #FFFFFF;
-      text-decoration: none;
+      text-decoration: underline;
   }
