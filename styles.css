@@ -6,17 +6,14 @@ body {
 }
 
     p {
-      text-align: center;
    color: #007F00;
-      font-size: 14px;
+    }
+    a {
+   color: #007F00;
     }
       p:hover {
    color: #FFFFFF;
    }
-a {
-   color: #007F00;
-      text-decoration: none;
-  }
     h1 {
    color: #007F00;
     }
@@ -26,9 +23,6 @@ a {
     div {
    color: #007F00;
     }
-a:link,a:visited {
-      text-decoration: none;
-  }
   a:hover {
    color: #FFFFFF;
    target-new: #FFFFFF;
