@@ -21,6 +21,9 @@ body {
     h2 {
    color: #007F00;
     }
+    h3 {
+   color: #007F00;
+    }
   a:hover {
    color: #FFFFFF;
    target-new: #FFFFFF;
