@@ -14,8 +14,18 @@ body {
    color: #FFFFFF;
    }
 a {
+   color: #007F00;
       text-decoration: none;
   }
+    h1 {
+   color: #007F00;
+    }
+    h2 {
+   color: #007F00;
+    }
+    div {
+   color: #007F00;
+    }
 a:link,a:visited {
       text-decoration: none;
   }
