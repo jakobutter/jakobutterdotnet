@@ -6,27 +6,34 @@ body {
 
     p {
    color: #FF0072;
+         font-family: Chicago
     }
     a {
    color: #FF0072;
+         font-family: Chicago
       text-decoration: none;
     }
       p:hover {
    color: #FFFFFF;
+font-family: Chicago
    }
   a:hover {
    color: #FFFFFF;
    target-new: #FFFFFF;
       text-decoration: underline;
+font-family: Chicago
   }
     h1 {
    color: #FF0072;
+font-family: Chicago
     }
     h2 {
    color: #FF0072;
+font-family: Chicago
     }
     h3 {
-   color: #007F00;
+   color: #FF0072;
+font-family: Chicago
     }
     h1:hover {
    color: #FFFFFF;
