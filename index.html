@@ -85,7 +85,7 @@ a:link,a:visited {
                         
                                    
 									<tr>
-<div style="height: 5px; background-color: #007F00;"></div>
+<div style="height: 5px;"></div>
 
 
   <div style="text-align: center;">
@@ -166,7 +166,7 @@ a:link,a:visited {
 // Function to create a <style> element with the color for <p> and <a>
 function applyColor(color) {
   const style = document.createElement('style');
-  style.innerHTML = `p, a { color: #${color}; }`; // Apply color to <p> and <a>
+  style.innerHTML = `p, a, div { color: #${color}; }`; // Apply color to <p> and <a>
   document.head.appendChild(style);
 }
 
