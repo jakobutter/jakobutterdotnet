@@ -1,0 +1,43 @@
+body {
+      background-color:black;
+ background-image: url("img/001.gif");
+  background-attachment: fixed;
+             background-size: cover;
+  background-position: center;
+	height: 100%;
+}
+
+    p {
+         font-family: Chicago
+    }
+    a {
+         font-family: Chicago
+    }
+      p:hover {
+   color: #FFFFFF;
+font-family: Chicago
+   }
+  a:hover {
+   color: #FFFFFF;
+   target-new: #FFFFFF;
+font-family: Chicago
+  }
+    h1 {
+font-family: Chicago
+    }
+    h2 {
+font-family: Chicago
+    }
+    h3 {
+font-family: Chicago
+    }
+    h1:hover {
+   color: #FFFFFF;
+    }
+    h2:hover {
+   color: #FFFFFF;
+    }
+    h3:hover {
+   color: #FFFFFF;
+    }
+@font-face { font-family: Chicago; src: url('Chicago.ttf'); } 
