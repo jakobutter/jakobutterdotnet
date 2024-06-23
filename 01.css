@@ -40,4 +40,37 @@ font-family: Chicago
     h3:hover {
    color: #FFFFFF;
     }
+  a[class=abutton] {
+      font-style: italic;
+      border-width: 2px; 
+      border-style: solid; 
+      padding: 0.5em;
+          padding-top: 0.25em;
+          padding-bottom: 0.25em;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 400% 400%;
+      animation: rainbow 5s ease infinite;
+    }
+    
+a[href="releases.html"] {
+      background-image: linear-gradient(45deg, #FFC7EE, #FFF0FA);
+      border-image: linear-gradient(45deg, #FFC7EE, #FFF0FA) 1;
+    }
+a[href="https://www.youtube.com"] {
+      background-image: linear-gradient(45deg, #FF0000, #B00000);
+      border-image: linear-gradient(45deg, #FF0000, #B00000) 1;
+    }
+a[href="gallery.html"] {
+      background-image: linear-gradient(45deg, #FFE0BF, #FF7070);
+      border-image: linear-gradient(45deg, #FFE0BF, #FF7070) 1;
+    }
+   a[href="entries.html"] {
+          background-image: linear-gradient(45deg, #E6D0FF, #AE6AFF);
+          border-image: linear-gradient(45deg, #E6D0FF, #AE6AFF) 1;
+        }
+    a[href="contact.html"] {
+          background-image: linear-gradient(45deg, #F0FF4C, #A1F4C3);
+          border-image: linear-gradient(45deg, #F0FF4C, #A1F4C3) 1;
+        }
 @font-face { font-family: Chicago; src: url('Chicago.ttf'); } 
