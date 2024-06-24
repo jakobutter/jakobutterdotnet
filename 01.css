@@ -67,7 +67,7 @@ a[href="releases.html"] {
       background-image: linear-gradient(45deg, #FFC7EE, #FFF0FA);
       border-image: linear-gradient(45deg, #FFC7EE, #FFF0FA) 1;
     }
-a[href="https://www.youtube.com"] {
+a[href="https://youtube.com/@yungulcer"] {
       background-image: linear-gradient(45deg, #FF0000, #B00000);
       border-image: linear-gradient(45deg, #FF0000, #B00000) 1;
     }
@@ -83,6 +83,22 @@ a[href="gallery.html"] {
           background-image: linear-gradient(45deg, #F0FF4C, #A1F4C3);
           border-image: linear-gradient(45deg, #F0FF4C, #A1F4C3) 1;
         }
+a[href="https://www.soundcloud.com/users/jakobutter"] {
+      background-image: linear-gradient(45deg, #FF4600, #FFC560);
+      border-image: linear-gradient(45deg, #FF4600, #FFC560) 1;
+    }
+a[href="https://open.spotify.com/artist/4gG6PkE4Pa3gaqCA0Ms0Zf"] {
+      background-image: linear-gradient(45deg, #24E484, #00B85C);
+      border-image: linear-gradient(45deg, #24E484, #00B85C) 1;
+    }
+a[href="https://x.com/pinksisser"] {
+      background-image: linear-gradient(45deg, #2FDEFF, #2DB0C9);
+      border-image: linear-gradient(45deg, #2FDEFF, #2DB0C9) 1;
+    }
+a[class="notabutton"] {
+      background-image: linear-gradient(45deg, #BADBFF, #E7F2FF);
+      border-image: linear-gradient(45deg, #BADBFF, #E7F2FF) 1;
+    }
 @keyframes rainbow {
            0% {background-position:0% 100%}
            50%{background-position:100% 0%}
