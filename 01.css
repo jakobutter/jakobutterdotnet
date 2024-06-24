@@ -96,6 +96,7 @@ a[href="https://x.com/pinksisser"] {
       border-image: linear-gradient(45deg, #2FDEFF, #2DB0C9) 1;
     }
 a[class=notabutton] {
+  font-family: Chicago
   font-style: italic;
   border-width: 3px; 
   border-style: solid; 
