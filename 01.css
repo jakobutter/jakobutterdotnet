@@ -50,6 +50,7 @@ font-family: Chicago
    color: #FFFFFF;
     }
   a[class=abutton] {
+    font-family: Chicago
       font-style: italic;
       border-width: 2px; 
       border-style: solid; 
