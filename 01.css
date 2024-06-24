@@ -95,7 +95,7 @@ a[href="https://x.com/pinksisser"] {
       background-image: linear-gradient(45deg, #2FDEFF, #2DB0C9);
       border-image: linear-gradient(45deg, #2FDEFF, #2DB0C9) 1;
     }
-a[class="notabutton"] {
+a[class=notabutton] {
       background-image: linear-gradient(45deg, #BADBFF, #E7F2FF);
       border-image: linear-gradient(45deg, #BADBFF, #E7F2FF) 1;
     }
