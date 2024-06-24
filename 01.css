@@ -17,6 +17,9 @@ body {
          font-family: Chicago
         color: #007F00
     }
+    a[href] {
+         font-family: Chicago
+    }
       p:hover {
    color: #FFFFFF;
 font-family: Chicago
@@ -28,9 +31,11 @@ font-family: Chicago
   }
     h1 {
 font-family: Chicago
+       color: #007F00
     }
     h2 {
 font-family: Chicago
+       color: #007F00
     }
     h3 {
 font-family: Chicago
