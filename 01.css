@@ -112,19 +112,25 @@ a[class=notabutton] {
 }
 
  a[class=entbutton] {
-    font-family: Chicago
-      font-style: italic;
-      border-width: 2px; 
-      border-style: solid; 
-      padding: 0.5em;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-size: 400% 400%;
-      animation: rainbow 5s ease infinite;
-background-image: linear-gradient(45deg, #007D00, #00FF00);
-      border-image: linear-gradient(45deg, #007D00, #00FF00) 1;
+          font-family: Chicago
+            font-style: italic;
+            border-width: 2px; 
+            border-style: solid; 
+            padding: 1em;
+            padding-top: 0.75em;
+            padding-bottom: 0.75em;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 400% 400%;
+            animation: rainbow 5s ease infinite;
+      background-image: linear-gradient(45deg, #007D00, #00FF00);
+            border-image: linear-gradient(45deg, #007D00, #00FF00) 1;
+          }
+.refbox {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
     }
-
 @keyframes rainbow {
            0% {background-position:0% 100%}
            50%{background-position:100% 0%}
