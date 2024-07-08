@@ -71,7 +71,7 @@ font-family: Chicago;
  color: #FFFFFF;
   }
 a[class=abutton] {
-  font-family: Chicago
+  font-family: Chicago;
     border-width: 2px; 
     border-style: solid; 
     padding: 0.5em;
@@ -153,7 +153,12 @@ a[class=entbutton] {
         div[class=bossdiv]
         {height: 100px; width:450px; outline-style:solid; outline-color:#007F00; outline-width: 5px; justify-self: center; }
         div[class=thugdiv]
-        {height: 300px; width:450px;  margin:auto; text-align: center;}  
+        {height: 300px; 
+            width:450px;  
+            text-align: center;  
+            max-width: fit-content; 
+            margin-left: auto; 
+            margin-right: auto;}  
         
 .refbox {
     display: flex;
