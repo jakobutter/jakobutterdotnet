@@ -68,7 +68,6 @@ font-family: Chicago;
     }
   a[class=abutton] {
     font-family: Chicago
-      font-style: italic;
       border-width: 2px; 
       border-style: solid; 
       padding: 0.5em;
@@ -78,6 +77,7 @@ font-family: Chicago;
       -webkit-text-fill-color: transparent;
       background-size: 400% 400%;
       animation: rainbow 5s ease infinite;
+text-decoration: none;
     }
     
 a[href="releases.html"] {
