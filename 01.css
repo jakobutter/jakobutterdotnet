@@ -25,6 +25,10 @@ a[href]
 {
    font-family: Chicago;
 }
+a[href]:hover
+{
+color: #FFFFFF;
+}
 
 p:hover 
 {
