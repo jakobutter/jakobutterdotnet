@@ -149,9 +149,12 @@ a[class=entbutton] {
         }
 
         div[class=cooldiv]
-        {height: 5px; width:400px; background-color: #007F00;}
+        {height: 5px; width:450px; background-color: #007F00;margin:auto;}
         div[class=bossdiv]
-        {height: 100px; width:450px; outline-style:solid; outline-color:#007F00; outline-width: 5px;}
+        {height: 100px; width:450px; outline-style:solid; outline-color:#007F00; outline-width: 5px; justify-self: center; }
+        div[class=thugdiv]
+        {height: 300px; width:450px;  margin:auto; text-align: center;}  
+        
 .refbox {
     display: flex;
     justify-content: center;
