@@ -151,7 +151,7 @@ a[class=entbutton] {
         div[class=cooldiv]
         {height: 5px; width:400px; background-color: #007F00;}
         div[class=bossdiv]
-        {height: 100px; width:400px; outline-style:solid; outline-color:#007F00; outline-width: 5px;}
+        {height: 100px; width:450px; outline-style:solid; outline-color:#007F00; outline-width: 5px;}
 .refbox {
     display: flex;
     justify-content: center;
