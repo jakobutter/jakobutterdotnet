@@ -155,17 +155,37 @@ a[class=entbutton] {
             margin: auto; 
         }
         div[class=bossdiv]
-        {height: 100px; width:450px; outline-style:solid; outline-color:#007F00; outline-width: 5px; justify-self: center; }
+        {height: 100px; 
+            width:450px; 
+            outline-style:solid; 
+            outline-color:#007F00; 
+            outline-width: 5px; 
+            justify-self: center; 
+        }
         div[class=thugdiv]
-        {height: 300px; 
-            width:100%;  
+        {height: 100%;  
+            width:512px;  
             text-align: center;  
             margin-left: auto; 
             margin-right: auto;
-            max-width: fit-content; 
         position:relative;
+        max-width: fit-content; 
         } 
          
+        img[class=thugimg]
+        {
+            max-width: 100%;
+            max-height: 100vh;
+            margin: auto;
+        }
+
+        a[class=thuga]
+        { 
+            text-align: center;  
+            margin-left: auto; 
+            margin-right: auto;
+        position:relative;
+        } 
         
 .refbox {
     display: flex;
