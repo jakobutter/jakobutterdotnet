@@ -81,6 +81,8 @@ a[class=abutton] {
     -webkit-text-fill-color: transparent;
     background-size: 400% 400%;
     animation: rainbow 5s ease infinite;
+   margin: 20px;
+   line-height: 250%;
 text-decoration: none;
   }
   
@@ -154,11 +156,14 @@ a[class=entbutton] {
         {height: 100px; width:450px; outline-style:solid; outline-color:#007F00; outline-width: 5px; justify-self: center; }
         div[class=thugdiv]
         {height: 300px; 
-            width:450px;  
+            width:100%;  
             text-align: center;  
-            max-width: fit-content; 
             margin-left: auto; 
-            margin-right: auto;}  
+            margin-right: auto;
+            max-width: fit-content; 
+        position:relative;
+        } 
+         
         
 .refbox {
     display: flex;
