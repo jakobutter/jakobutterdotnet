@@ -149,7 +149,11 @@ a[class=entbutton] {
         }
 
         div[class=cooldiv]
-        {height: 5px; width:450px; background-color: #007F00;margin:auto;}
+        {height: 5px; 
+            width:90%; 
+            background-color: #007F00; 
+            margin: auto; 
+        }
         div[class=bossdiv]
         {height: 100px; width:450px; outline-style:solid; outline-color:#007F00; outline-width: 5px; justify-self: center; }
         div[class=thugdiv]
