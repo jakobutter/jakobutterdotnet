@@ -84,6 +84,12 @@ a[class=abutton] {
 text-decoration: none;
   }
   
+  a[ class=abutton]:hover
+  {
+    background-image: linear-gradient(45deg, #FFFFFF, #FFFFFF);
+    border-image: linear-gradient(45deg, #FFFFFF, #FFFFFF) 1;
+  }
+
 a[href="/releases"] {
     background-image: linear-gradient(45deg, #FFC7EE, #FFF0FA);
     border-image: linear-gradient(45deg, #FFC7EE, #FFF0FA) 1;
@@ -150,7 +156,7 @@ a[class=entbutton] {
 
         div[class=cooldiv]
         {height: 5px; 
-            width:90%; 
+            width:100%; 
             background-color: #007F00; 
             margin: auto; 
         }
@@ -164,7 +170,7 @@ a[class=entbutton] {
         }
         div[class=thugdiv]
         {height: 100%;  
-            width:512px;  
+            width:100%;  
             text-align: center;  
             margin-left: auto; 
             margin-right: auto;
