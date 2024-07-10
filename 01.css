@@ -5,18 +5,23 @@ background-repeat: z;
   height: 100%;
 }
 
+:root {
+    --maincolor: #f0ff4c;
+    --hovercolor: #ffffff;
+}
+
 p 
 {
   font-family: Chicago;
   text-align: center;
   font-size: 20px;
-  color: #007F00;
+  color: var(--maincolor);
 }
 
 a 
 {
  font-family: Chicago;
- color: #007F00;
+ color: var(--maincolor);
 }
 
 a[href] 
@@ -25,32 +30,31 @@ a[href]
 }
 a[href]:hover
 {
-color: #FFFFFF;
+    color: var(--hovercolor);
 }
 
 p:hover 
 {
- color: #FFFFFF;
+    color: var(--hovercolor);
  font-family: Chicago;
 }
 
 a:hover 
 {
- color: #FFFFFF;
- target-new: #FFFFFF;
+    color: var(--hovercolor);
  font-family: Chicago;
 }
 
 h1 
 {
  font-family: Chicago;
-     color: #007F00;
+ color: var(--maincolor);
 }
 
 h2 
 {
  font-family: Chicago;
- color: #007F00;
+ color: var(--maincolor);
 }
 
 h3 
@@ -60,13 +64,13 @@ font-family: Chicago;
 }
 
   h1:hover {
- color: #FFFFFF;
+    color: var(--hovercolor);
   }
   h2:hover {
- color: #FFFFFF;
+    color: var(--hovercolor);
   }
   h3:hover {
- color: #FFFFFF;
+    color: var(--hovercolor);
   }
 a[class=abutton] {
   font-family: Chicago;
@@ -154,10 +158,15 @@ a[class=entbutton] {
           border-image: linear-gradient(45deg, #007D00, #00FF00) 1;
         }
 
+        div[class=cooldiv]:hover
+        {
+            background-color: var(--hovercolor);
+        }
+
         div[class=cooldiv]
         {height: 5px; 
             width:100%; 
-            background-color: #007F00; 
+            background-color: var(--maincolor);
             margin: auto; 
         }
         div[class=bossdiv]
