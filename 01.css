@@ -10,6 +10,10 @@ background-repeat: z;
     --hovercolor: #ffffff;
 }
 
+.hiddentxt {
+    color:#000000;
+}
+
 p 
 {
   font-family: Chicago;
@@ -219,19 +223,58 @@ width:100%;
             width:100%;  
         }
 
-        div[class=galdiv] {
-            display: grid;
-            grid-template-columns: repeat(512px, 1fr);
-            margin-left: 10%;
-            margin-right: 10%;
-            gap: 30px;
+.galdiv {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+max-width: 1024px;
+            
+            
         }
 
-        img[class=galimg]
+.galimg {
+            flex: 1 1 calc(33.333% - 20px);
+            box-sizing: border-box;
+            text-align: center;
+            
+        }
+
+        .galimg:hover  a{
+            color: var(--hovercolor);
+                  }
+
+.galpic 
         {
             width: 100%;
+            height: auto;
 
         }
+
+.galhovimg {
+    flex: 1 1 calc(33.333% - 20px);
+    box-sizing: border-box;
+    text-align: center;
+            position: relative;
+            display: inline-block;
+            
+            
+          }
+
+.galhovimg img {
+            display: block;
+            transition: opacity 0.3s ease;
+            width: 100%;
+            height: auto;
+          }
+
+.galhovimg img.top:hover {
+            opacity: 0;
+          }
+
+.galhovimg:hover  a{
+    color: var(--hovercolor);
+          }
 
         img[class=thugimg]
         {
