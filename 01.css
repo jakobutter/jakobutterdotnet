@@ -224,14 +224,13 @@ width:100%;
             grid-template-columns: repeat(3, 1fr);
             margin-left: 10%;
             margin-right: 10%;
+            gap: 30px;
         }
 
         img[class=galimg]
         {
-            width: 90%;
-            padding-top: 0.25em;
-       margin: 20px;
-       line-height: 250%;
+            width: 100%;
+
         }
 
         img[class=thugimg]
