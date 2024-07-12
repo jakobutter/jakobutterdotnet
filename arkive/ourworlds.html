@@ -19,18 +19,15 @@
 <img src="https://www.jakobutter.net/img/ow.jpg" alt="The Yung Ulcer EP Cover Art" style="margin-bottom:40px; margin-top:30px; width:50%;">
 <br>
 
-<div id="songData" data-songs='[
-        {"name": "Willow", "file": "/arkive/pinksisser/dishonor.mp3"}
-    ]'></div>
-    
-    <div id="songList"></div>
-    <button id="playPauseButton" onclick="playPause()">></button>
-    <div id="progressBar" onclick="scrub(event)">
-        <div style="width: 0%;"></div>
+    <div id="player">
+        <audio id="audioPlayer" controls></audio>
+        <ul id="songList">
+            <li data-src="song1.mp3">Song 1</li>
+            <li data-src="song2.mp3">Song 2</li>
+            <li data-src="song3.mp3">Song 3</li>
+        </ul>
     </div>
-    <div>
-        <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
-    </div>
+
 <br>
 <br>
 <script src="/scripts/musicscript.js"></script>
