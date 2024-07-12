@@ -46,23 +46,37 @@ width:100%;
     font-family: 'handelgothic';
 }
 
-        #player {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        #controls {
-            display: flex;
-            gap: 10px;
-        }
-        #progressContainer {
-            width: 100%;
-            background-color: #f3f3f3;
-            border: 1px solid #ccc;
-            margin-top: 10px;
-        }
-        #progressBar {
-            width: 0;
-            height: 10px;
-            background-color: #4caf50;
-        }
+button {
+    border: none;
+    color: white;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: black;
+}
+button:active {
+    background-color: white;
+}
+
+.song {
+    cursor: pointer;
+}
+.song.playing {
+    font-weight: bold;
+}
+#progressBar {
+    width: 100%;
+    height: 20px;
+    background-color: #ddd;
+}
+#progressBar div {
+    height: 100%;
+    width: 0%;
+    background-color: #4caf50;
+}
