@@ -43,43 +43,14 @@ onclick="nextSong()">>></button>
 <div id="progressBar" onclick="scrub(event)"><div></div></div>
 <br>
 <br>
-<div id="songList"></div>
+<div id="songData" data-songs='[
+        {"name": "Willow", "file": "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
+        {"name": "Skye", "file": "https://www.jakobutter.net/arkive/ourworlds/02skye.mp3"},
+        {"name": "Nimbus", "file": "https://www.jakobutter.net/arkive/ourworlds/03nimbus.mp3"}
+    ]'></div>
 <br>
 <br>
-<script src="/scripts/musicscript.js">
-var songs = [
-  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
-  {name: "Skye", file: "https://www.jakobutter.net/arkive/ourworlds/02skye.mp3"},
-  {name: "Nimbus", file: "https://www.jakobutter.net/arkive/ourworlds/03nimbus.mp3"},
-  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
-  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
-  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
-  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
-  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
-  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
-  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
-  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
-  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
-  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
-  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
-  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
-  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
-  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
-  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
-  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
-  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
-  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
-  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
-  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
-  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
-  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
-  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
-  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
-  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
-  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
-  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
-];
-</script>
+<script src="/scripts/musicscript.js"></script>
 
 </div>
 
