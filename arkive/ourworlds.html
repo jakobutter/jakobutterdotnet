@@ -1,17 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Our Worlds</title>
-<head>
-    <title>jakobutter.net</title>
-    <meta http-equiv="Content-Language" content="en-us">
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/02.css">
-  <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MP3 Music Player</title>
+    <style>
+        #player {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #controls {
+            display: flex;
+            gap: 10px;
+        }
+        #progressContainer {
+            width: 100%;
+            background-color: #f3f3f3;
+            border: 1px solid #ccc;
+            margin-top: 10px;
+        }
+        #progressBar {
+            width: 0;
+            height: 10px;
+            background-color: #4caf50;
+        }
+    </style>
 </head>
-
-<div id="player">
+<body>
+    <div id="player">
         <div id="controls">
             <button id="prevBtn">Text</button>
             <button id="playPauseBtn">Text</button>
@@ -22,12 +39,11 @@
         </div>
         <div id="timeDisplay">0:00 / 0:00</div>
         <ul id="songList" style="display: none;">
-            <li data-src="/arkive/pinksisser/dishonor.mp3">Song 1</li>
-            <li data-src="/arkive/pinksisser/wannalink.mp3">Song 2</li>
-            <li data-src="/arkive/pinksisser/stoptextingme.mp3">Song 3</li>
+            <li data-src="song1.mp3">Song 1</li>
+            <li data-src="song2.mp3">Song 2</li>
+            <li data-src="song3.mp3">Song 3</li>
         </ul>
     </div>
     <script src="player.js"></script>
-
 </body>
 </html>
