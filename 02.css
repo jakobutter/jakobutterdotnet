@@ -34,24 +34,6 @@ width:100%;
       }
 @font-face { font-family: Chicago; src: url('Chicago.ttf'); } 
 
-button {
-    border: none;
-    color: white;
-    width: 50px;
-    height: 50px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 50%;
-    background-color: black;
-}
-button:active {
-    background-color: white;
-}
-
 .ourworlds {
     background-color: #433799;
     color: #FFF78C;
@@ -64,23 +46,23 @@ button:active {
     font-family: 'handelgothic';
 }
 
-  #player {
+        #player {
             display: flex;
             flex-direction: column;
             align-items: center;
         }
-  #controls {
+        #controls {
             display: flex;
             gap: 10px;
         }
-  #progressContainer {
+        #progressContainer {
             width: 100%;
             background-color: #f3f3f3;
             border: 1px solid #ccc;
             margin-top: 10px;
         }
-  #progressBar {
+        #progressBar {
             width: 0;
             height: 10px;
             background-color: #4caf50;
-            }
+        }
