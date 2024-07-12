@@ -19,28 +19,19 @@
 <img src="https://www.jakobutter.net/img/ow.jpg" alt="The Yung Ulcer EP Cover Art" style="margin-bottom:40px; margin-top:30px; width:50%;">
 <br>
 
-<audio id="player" src="/arkive/ulcerep/what.mp3"></audio>
-<button  id="prevButton" 
-class=ourworlds ;
-
-onclick="prevSong()"><<</button>
-
-<button id="playPauseButton" s
-class=ourworlds ;
-onclick="playPause()">></button>
-
-<button id="nextButton" 
-class=ourworlds ;
-onclick="nextSong()">>></button>
-
-<br>
-<br>
-<div id="progressBar" onclick="scrub(event)"><div></div></div>
-<br>
-<br>
 <div id="songData" data-songs='[
         {"name": "Willow", "file": "https://www.jakobutter.net/arkive/pinksisser/dishonor.mp3"}
     ]'></div>
+    
+     <audio id="player" controls></audio>
+    <div id="songList"></div>
+    <button id="playPauseButton" onclick="playPause()">></button>
+    <div id="progressBar" onclick="scrub(event)">
+        <div style="width: 0%;"></div>
+    </div>
+    <div>
+        <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+    </div>
 <br>
 <br>
 <script src="/scripts/musicscript.js"></script>
