@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', function() {
     var songList = document.getElementById('songList');
     var playPauseButton = document.getElementById('playPauseButton');
     var progressBar = document.getElementById('progressBar');
+    var currentTimeElement = document.getElementById('currentTime');
+    var durationElement = document.getElementById('duration');
 
     audioPlayer.onended = function() {
         nextSong();
@@ -15,6 +17,11 @@ document.addEventListener('DOMContentLoaded', function() {
     audioPlayer.ontimeupdate = function() {
         var progress = audioPlayer.currentTime / audioPlayer.duration * 100 + '%';
         progressBar.children[0].style.width = progress; 
+        currentTimeElement.innerText = formatTime(audioPlayer.currentTime);
+    };
+
+    audioPlayer.onloadedmetadata = function() {
+        durationElement.innerText = formatTime(audioPlayer.duration);
     };
 
     function playPause() {
@@ -64,6 +71,12 @@ document.addEventListener('DOMContentLoaded', function() {
     function scrub(event) {
         var x = event.offsetX / progressBar.offsetWidth * audioPlayer.duration; 
         audioPlayer.currentTime = x; 
+    }
+
+    function formatTime(seconds) {
+        var minutes = Math.floor(seconds / 60);
+        var seconds = Math.floor(seconds % 60);
+        return minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
     }
 
     updateSongList();
