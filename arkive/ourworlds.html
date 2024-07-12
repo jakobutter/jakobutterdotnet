@@ -9,28 +9,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/01.css">
   <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
-      <script src="colorscript.js"></script>
+      <script src="/scripts/musicscript.js"></script>
 <style>
 body {
-    background-color: #2C2466;
-    color: #FFF78C;
-    text-shadow: -2px -1px 2px #CF4578, 2px 1px 2px #45C3B5;
+    
 }
 </style>
 </head>
-<body>
+<body class="ourworldstxt">
 
 <div class=thugdiv style=max-width:320px;>
 <br>
 <br>
-<h2>Our Worlds</h2>
+<h2 class="ourworldstxt">Our Worlds</h2>
 <img src="https://www.jakobutter.net/img/ow.jpg" alt="The Yung Ulcer EP Cover Art" style="margin-bottom:40px; margin-top:30px; width:50%;">
 <br>
 
 <audio id="player" src="/arkive/ulcerep/what.mp3"></audio>
-<button  id="prevButton" onclick="prevSong()"><<</button>
-<button id="playPauseButton" onclick="playPause()">></button>
-<button id="nextButton" onclick="nextSong()">>></button>
+<button  id="prevButton" 
+class=ourworlds ;
+
+onclick="prevSong()"><<</button>
+
+<button id="playPauseButton" s
+class=ourworlds ;
+onclick="playPause()">></button>
+
+<button id="nextButton" 
+class=ourworlds ;
+onclick="nextSong()">>></button>
+
 <br>
 <br>
 <div id="progressBar" onclick="scrub(event)"><div></div></div>
@@ -41,79 +49,37 @@ body {
 <br>
 <script>
 var songs = [
-  {name: "You Know What?", file: "/arkive/ulcerep/what.mp3"},
-  {name: "Toddler", file: "/arkive/ulcerep/toddler.mp3"},
-  {name: "Guilty Conscience", file: "/arkive/ulcerep/guilty.mp3"},
-  {name: "Ulcer Chatter", file: "/arkive/ulcerep/chatter.mp3"},
-  {name: "Austin Powers", file: "/arkive/ulcerep/powers.mp3"},
-  {name: "I Keep My Hands Sanitized", file: "/arkive/ulcerep/hands.mp3"},
-  {name: "Fat People", file: "/arkive/ulcerep/people.mp3"}
+  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
+  {name: "Skye", file: "https://www.jakobutter.net/arkive/ourworlds/02skye.mp3"},
+  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
+  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
+  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
+  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
+  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
+  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
+  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
+  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
+  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
+  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
+  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
+  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
+  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
+  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
+  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
+  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
+  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
+  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
+  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
+  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
+  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
+  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
+  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
+  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
+  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
+  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
+  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
+  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
 ];
-var songIndex = 0;
-var audioPlayer = document.getElementById('player');
-var songList = document.getElementById('songList');
-var playPauseButton = document.getElementById('playPauseButton');
-var progressBar = document.getElementById('progressBar');
-
-audioPlayer.onended = function() {
-   nextSong();
-};
-
-audioPlayer.ontimeupdate = function() {
-   var progress = audioPlayer.currentTime / audioPlayer.duration * 100 + '%';
-   progressBar.children[0].style.width = progress; 
-};
-
-function playPause() {
-    if (audioPlayer.paused) {
-        audioPlayer.play();
-        playPauseButton.innerText = 'I I';
-    } else {
-        audioPlayer.pause();
-        playPauseButton.innerText = '>';
-    }
-}
-
-function nextSong() {
-    songIndex++;
-    if (songIndex > songs.length - 1) {
-        songIndex = 0;
-    }
-    playSong();
-}
-
-function prevSong() {
-    songIndex--;
-    if (songIndex < 0) {
-        songIndex = songs.length - 1;
-    }
-    playSong();
-}
-
-function playSong() {
-    audioPlayer.src = songs[songIndex].file;
-    audioPlayer.play();
-    playPauseButton.innerText = 'I I';
-    updateSongList();
-}
-
-function updateSongList() {
-   songList.innerHTML = songs.map(function(song, index) {
-       return '<div class="song' + (index === songIndex ? ' playing' : '') + '" onclick="selectSong(' + index + ')">' + song.name + '</div>';
-   }).join('');
-}
-
-function selectSong(index) {
-   songIndex = index;
-   playSong();
-}
-
-function scrub(event) {
-   var x = event.offsetX / progressBar.offsetWidth * audioPlayer.duration; 
-   audioPlayer.currentTime = x; 
-}
-
-updateSongList();
 </script>
 
 </div>
