@@ -15,7 +15,7 @@
         <h2>Our Worlds</h2>
         <img src="https://www.jakobutter.net/img/ulcerep.jpg" alt="The Yung Ulcer EP Cover Art" style="margin-bottom:40px; margin-top:30px; width:50%;">
         <br>
-        <audio id="player" src="/arkive/ulcerep/what.mp3"></audio>
+        <audio id="player"></audio>
         <button id="prevButton" onclick="prevSong()"><<</button>
         <button id="playPauseButton" onclick="playPause()">></button>
         <button id="nextButton" onclick="nextSong()">>></button>
@@ -23,7 +23,6 @@
         <div id="progressBar" onclick="scrub(event)"><div></div></div>
         <br><br>
         <div id="songList"></div>
-        <br><br>
         <script id="songData" type="application/json">
         [
             {"name": "You Know What?", "file": "/arkive/ulcerep/what.mp3"},
