@@ -1,168 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>CTHULU BLACKPILL</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-body {
-    background-color: #a49d8f;
-    color: black;
-  font-family: 'Times New Roman', monospace;
-}
-#playerContainer {
-    text-align: center;
-    margin-top: 20px;
-}
-button {
-    border: none;
-    color: #FF0000;
-    width: 50px;
-    height: 50px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 50%;
-    background-color: black;
-}
-button:active {
-    background-color: #ff0000;
-    
-}
-#songList {
-    margin-top: 20px;
-}
-.song {
-    cursor: pointer;
-}
-.song.playing {
-    font-weight: bold;
-    background-image: linear-gradient(45deg,#000000,#FF0000,#000000,#FF0000,#000000);
-   -webkit-background-clip: text;
-   -webkit-text-fill-color: transparent;
-   background-size: 400% 400%;
-   animation: rainbow 10s ease infinite;
-}
-#progressBar {
-    width: 100%;
-    height: 20px;
-    background-color: black;
-}
-#progressBar div {
-    height: 100%;
-    width: 0%;
-    background-color: #ff0000;
-}
-@keyframes rainbow {
-   0% {background-position:0% 50%}
-   50% {background-position:100% 50%}
-   100% {background-position:0% 50%}
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Music Player</title>
 
-</style>
+  <!-- Load the custom CSS style file -->
+  <link rel="stylesheet" href="/02.css">
 </head>
 <body>
+  <div class="player">
+    <div class="details">
+      <div class="now-playing">PLAYING x OF y</div>
+      <div class="track-art"></div>
+      <div class="track-name">Track Name</div>
+      <div class="track-artist">Track Artist</div>
+    </div>
+    <div class="buttons">
+      <div class="prev-track" onclick="prevTrack()"><i class="fa fa-step-backward fa-2x"></i></div>
+      <div class="playpause-track" onclick="playpauseTrack()"><i class="fa fa-play-circle fa-5x"></i></div>
+      <div class="next-track" onclick="nextTrack()"><i class="fa fa-step-forward fa-2x"></i></div>
+    </div>
+    <div class="slider_container">
+      <div class="current-time">00:00</div>
+      <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
+      <div class="total-duration">00:00</div>
+    </div>
+    <div class="slider_container">
+      <i class="fa fa-volume-down"></i>
+      <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()">
+      <i class="fa fa-volume-up"></i>
+    </div>
+  </div>
 
-<div id="playerContainer">
-<br>
-<br>
-<h2>CTHULU BLACKPILL</h2>
-<br>
-<audio id="player" src="/arkive/pink/dishonor.mp3"></audio>
-
-<button  id="prevButton" onclick="prevSong()">⏪</button>
-<button id="playPauseButton" onclick="playPause()">▶</button>
-<button id="nextButton" onclick="nextSong()">⏭️</button>
-<br>
-<br>
-<div id="progressBar" onclick="scrub(event)"><div></div></div>
-<br>
-<br>
-<div id="songList"></div>
-<br>
-<br>
-<img src="/img/cthulu.png" alt="CTHULU BLACKPILL Cover Art" style="width:50%;">
-<script>
-var songs = [
-  {name: "GOING TO WAR", file: "/arkive/pink/dishonor.mp3"},
-  {name: "LIONS DEN", file: "/arkive/pink/wannalink.mp3"},
-  {name: "GLOWING", file: "/arkive/pink/stoptextingme.mp3"},
-  {name: "NO CONSEQUENCES", file: "/arkive/pink/laughatdeath.mp3"},
-  {name: "HALF-LIFE", file: "/arkive/pink/flyingdutchman.mp3"},
-      {name: "WILDABEAST", file: "/arkive/pink/flyingdutchman.mp3"},
-    {name: "FULL DISCLOSURE", file: "/arkive/pink/flyingdutchman.mp3"},
-  {name: "COLD SPELL", file: "/arkive/pink/wholeworldhating.mp3"}
-];
-var songIndex = 0;
-var audioPlayer = document.getElementById('player');
-var songList = document.getElementById('songList');
-var playPauseButton = document.getElementById('playPauseButton');
-var progressBar = document.getElementById('progressBar');
-
-audioPlayer.onended = function() {
-   nextSong();
-};
-
-audioPlayer.ontimeupdate = function() {
-   var progress = audioPlayer.currentTime / audioPlayer.duration * 100 + '%';
-   progressBar.children[0].style.width = progress; 
-};
-
-function playPause() {
-    if (audioPlayer.paused) {
-        audioPlayer.play();
-        playPauseButton.innerText = 'I I';
-    } else {
-        audioPlayer.pause();
-        playPauseButton.innerText = '>';
-    }
-}
-
-function nextSong() {
-    songIndex++;
-    if (songIndex > songs.length - 1) {
-        songIndex = 0;
-    }
-    playSong();
-}
-
-function prevSong() {
-    songIndex--;
-    if (songIndex < 0) {
-        songIndex = songs.length - 1;
-    }
-    playSong();
-}
-
-function playSong() {
-    audioPlayer.src = songs[songIndex].file;
-    audioPlayer.play();
-    playPauseButton.innerText = 'I I';
-    updateSongList();
-}
-
-function updateSongList() {
-   songList.innerHTML = songs.map(function(song, index) {
-       return '<div class="song' + (index === songIndex ? ' playing' : '') + '" onclick="selectSong(' + index + ')">' + song.name + '</div>';
-   }).join('');
-}
-
-function selectSong(index) {
-   songIndex = index;
-   playSong();
-}
-
-function scrub(event) {
-   var x = event.offsetX / progressBar.offsetWidth * audioPlayer.duration; 
-   audioPlayer.currentTime = x; 
-}
-
-updateSongList();
-</script>
-
-</div>
-
+  <!-- Load the main script for the player -->
+  <script src="/scripts/musicscript.js"></script>
 </body>
 </html>
