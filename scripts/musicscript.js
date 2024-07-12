@@ -1,35 +1,4 @@
-var songs = [
-  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
-  {name: "Skye", file: "https://www.jakobutter.net/arkive/ourworlds/02skye.mp3"},
-  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
-  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
-  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
-  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
-  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
-  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
-  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
-  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
-  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
-  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
-  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
-  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
-  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
-  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
-  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
-  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
-  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
-  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
-  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
-  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
-  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
-  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
-  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
-  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
-  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
-  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
-  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
-  {name: "Willow", file: "https://www.jakobutter.net/arkive/ourworlds/01willow.mp3"},
-];
+var songs = [];
 var songIndex = 0;
 var audioPlayer = document.getElementById('player');
 var songList = document.getElementById('songList');
