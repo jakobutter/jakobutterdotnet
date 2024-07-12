@@ -4,6 +4,8 @@
     --hovercolor: #ffffff;
 }
 
+@font-face { font-family: handelgothic; src: url('handelgothic.otf'); } 
+
   h1:hover {
     color: var(--hovercolor);
   }
