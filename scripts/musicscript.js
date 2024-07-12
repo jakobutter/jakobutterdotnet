@@ -1,3 +1,4 @@
+var songs
 var songIndex = 0;
 var audioPlayer = document.getElementById('player');
 var songList = document.getElementById('songList');
