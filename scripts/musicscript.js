@@ -44,9 +44,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function playSong() {
         audioPlayer.src = songs[songIndex].file;
-        audioPlayer.play();
-        playPauseButton.innerText = 'I I';
-        updateSongList();
+        audioPlayer.play().then(() => {
+            playPauseButton.innerText = 'I I';
+            updateSongList();
+        }).catch(error => {
+            console.error('Error playing audio:', error);
+        });
     }
 
     function updateSongList() {
