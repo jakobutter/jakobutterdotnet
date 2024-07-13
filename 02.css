@@ -73,6 +73,11 @@ width:100%;
     font-family: 'Arial';
 }
 
+.pinksisserbutton {
+    background-color: #black;
+    color: red;
+}
+
 button {
     border: none;
     color: white;
