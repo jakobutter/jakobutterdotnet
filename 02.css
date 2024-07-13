@@ -46,6 +46,17 @@ width:100%;
     font-family: 'handelgothic';
 }
 
+.ulcerep {
+    background-color: #B90017;
+    color: black;
+}
+
+.pinksisser {
+    background-color: #a1f4c3;
+    color: black;
+    font-family: 'Arial';
+}
+
 button {
     border: none;
     color: white;
