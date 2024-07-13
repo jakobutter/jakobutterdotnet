@@ -94,17 +94,22 @@ width:100%;
 }
 
 .dirtyblonde {
-    background-color: #000000;
-    color: #000000;
-background-image: url("/img/07.gif");
-background-repeat: z;
-  height: 100%;
+    background-color: #E8D5B1;
+    color: #394C5A;
   }
   
 .dirtyblondebutton {
-    background-color: #000000;
-    color: #FFFFFF;
+    background-color: #F9E6C4;
+    color: #394C5A;
   }
+
+.dirtyblondebar {
+    background-color: #F9E6C4;
+}
+
+.dirtyblondebar div {
+    background-color: #394C5A;
+}
 
 .pinksisser {
     background-color: #a1f4c3;
@@ -118,11 +123,11 @@ background-repeat: z;
 }
 
 .pinksisserbar {
-    background-color: #black;
+    background-color: black;
 }
 
 .pinksisserbar div {
-    background-color: #red;
+    background-color: red;
 }
 
 .evergreen {
