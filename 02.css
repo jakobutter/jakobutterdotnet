@@ -78,11 +78,11 @@ width:100%;
     color: red;
 }
 
-.pinksisser #progressBar {
+.pinksisserbar {
     background-color: #black;
 }
 
-.pinksisser #progressBar div {
+.pinksisserbar div {
     background-color: #red;
 }
 
