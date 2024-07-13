@@ -61,11 +61,23 @@ width:100%;
 .badomen {
     background-color: #000000;
     color: white;
-    font-family: 'SimSun';
+    font-family: 'simsun';
 }
 
 .badomenbutton {
     background-color: #FF6551;
+    color: white;
+}
+
+.thc {
+    background-color: #000000;
+    color: white;
+    font-family: 'rodin';
+    text-shadow: -2px -1px 2px #007F00,
+}
+
+.thcbutton {
+    background-color: #007F00;
     color: white;
 }
 
