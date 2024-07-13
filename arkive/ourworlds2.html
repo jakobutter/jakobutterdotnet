@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Our Worlds Vol. 2</title>
+<head>
+    <title>jakobutter.net</title>
+  <meta http-equiv="Content-Language" content="en-us">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/02.css">
+  <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+  <script src="https://www.jakobutter.net/scripts/musicscript.js" defer></script>
+</head>
+<body class=ourworlds2txt>
+
+<div class=thugdiv style=max-width:320px;>
+<br>
+<br>
+<h2>Our Worlds Vol. 2</h2>
+<img src="https://www.jakobutter.net/img/ourworlds2.png" alt="The Yung Ulcer EP Cover Art" style="margin-bottom:40px; margin-top:30px; width:50%;">
+<br>
+
+<audio id="player" src="/arkive/ourworlds2/puffbeat.mp3"></audio>
+<button class=ourworlds2  id="prevButton" onclick="prevSong()">⏮︎</button>
+<button class=ourworlds2 id="playPauseButton" onclick="playPause()">▶</button>
+<button class=ourworlds2 id="nextButton" onclick="nextSong()">⏭︎</button>
+<br>
+<br>
+<div id="progressBar" onclick="scrub(event)"><div></div></div>
+<br>
+<br>
+<div id="songList"></div>
+<br>
+<br>
+<script>
+var songs = [
+  {name: "puff beat", file: "/arkive/ourworlds/puffbeat.mp3"},
+  {name: "gymnopedie", file: "/arkive/ourworlds/gymnopedie.mp3"},
+  {name: "abstract", file: "/arkive/ourworlds/abstract.mp3"},
+  {name: "it's raining", file: "/arkive/ourworlds/itsraining.mp3"},
+  {name: "nihilanth", file: "/arkive/ourworlds/nihilanth.mp3"},
+  {name: "i don't wanna make this hard", file: "/arkive/ourworlds/idontwannamakethishard.mp3"},
+  {name: "cotton candy pods", file: "/arkive/ourworlds/cottoncandypods.mp3"},
+  {name: "peralia", file: "/arkive/ourworlds/peralia.mp3"},
+  {name: "biking, with you", file: "/arkive/ourworlds/bikingwithyou.mp3"},
+  {name: "kites", file: "/arkive/ourworlds/kites.mp3"},
+  {name: "afraid of myself", file: "/arkive/ourworlds/afraidofmyself.mp3"},
+  {name: "bleck beat", file: "/arkive/ourworlds/bleckbeat.mp3"},
+  {name: "fields of something", file: "/arkive/ourworlds/fieldsofsomething.mp3"},
+  {name: "woke", file: "/arkive/ourworlds/woke.mp3"},
+  {name: "desert jam", file: "/arkive/ourworlds/desertjam.mp3"},
+  {name: "afraid of myself pt. 2", file: "/arkive/ourworlds/afraidofmyselfp2.mp3"},
+  {name: "spaceman", file: "/arkive/ourworlds/spaceman.mp3"},
+  {name: "andycat", file: "/arkive/ourworlds/andycat.mp3"},
+  {name: "blockheads world", file: "/arkive/ourworlds/blockheadsworld.mp3"},
+  {name: "jamba beat", file: "/arkive/ourworlds/jambabeat.mp3"},
+  {name: "death do us part", file: "/arkive/ourworlds/deathdouspart.mp3"},
+  {name: "de ruijter", file: "/arkive/ourworlds/deruijter.mp3"}
+];
+</script>
+
+</div>
+
+</body>
+</html>
