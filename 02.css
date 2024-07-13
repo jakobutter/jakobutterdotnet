@@ -38,25 +38,25 @@ width:100%;
 
 .ourworlds {
     background-color: #433799;
-    color: #FFFFFF;
-    text-shadow: -2px -1px 2px #CF4578, 2px 1px 2px #433799;
+    color: #FFF78C;
+    text-shadow: -2px -1px 2px #45C3B5, 2px 1px 2px #433799;
 }
 .ourworldstxt {
-    background-color: #000000;
-    color: #FFFFFF;
-    text-shadow: -2px -1px 2px #CF4578, 2px 1px 2px #433799;
+    background-color: #2C2466;
+    color: #FFF78C;
+    text-shadow: -2px -1px 2px #45C3B5, 2px 1px 2px #433799;
     font-family: 'handelgothic';
 }
 
 .ourworlds2 {
     background-color: #FA8F60;
-    color: #FFF78C;
+    color: #FFFFFF;
     text-shadow: -2px -1px 2px #CBFA60, 2px 1px 2px #C660FA;
 }
 .ourworlds2txt {
-    background-color: #2C2466;
-    color: #FFF78C;
-    text-shadow: -2px -1px 2px #CBFA60, 2px 1px 2px #C660FA;
+    background-color: #000000;
+    color: #FFFFFF;
+    text-shadow: -2px -1px 2px #CBFA60, 2px 1px 2px #FA8F60;
     font-family: 'handelgothic';
 }
 
