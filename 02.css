@@ -51,6 +51,22 @@ width:100%;
     color: black;
 }
 
+.ulcerepbutton {
+    background-color: #black;
+    color: white;
+}
+
+.badomen {
+    background-color: #black;
+    color: white;
+    font-family: 'SimSun';
+}
+
+.badomenbutton {
+    background-color: #FF6551;
+    color: white;
+}
+
 .pinksisser {
     background-color: #a1f4c3;
     color: black;
