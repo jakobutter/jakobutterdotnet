@@ -93,6 +93,19 @@ width:100%;
     color: white;
 }
 
+.dirtyblonde {
+    background-color: #000000;
+    color: #000000;
+background-image: url("img/07.gif");
+background-repeat: z;
+  height: 100%;
+  }
+  
+.dirtyblondebutton {
+    background-color: #000000;
+    color: #FFFFFF;
+  }
+
 .pinksisser {
     background-color: #a1f4c3;
     color: black;
