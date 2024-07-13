@@ -16,10 +16,10 @@ audioPlayer.ontimeupdate = function() {
 function playPause() {
     if (audioPlayer.paused) {
         audioPlayer.play();
-        playPauseButton.innerText = 'I I';
+        playPauseButton.innerText = '⏸︎';
     } else {
         audioPlayer.pause();
-        playPauseButton.innerText = '>';
+        playPauseButton.innerText = '⏵︎';
     }
 }
 
