@@ -48,6 +48,18 @@ width:100%;
     font-family: 'handelgothic';
 }
 
+.ourworlds2 {
+    background-color: #FA8F60;
+    color: #FFF78C;
+    text-shadow: -2px -1px 2px #CBFA60, 2px 1px 2px #C660FA;
+}
+.ourworlds2txt {
+    background-color: #2C2466;
+    color: #FFF78C;
+    text-shadow: -2px -1px 2px #CBFA60, 2px 1px 2px #C660FA;
+    font-family: 'handelgothic';
+}
+
 .ulcerep {
     background-color: #B90017;
     color: black;
