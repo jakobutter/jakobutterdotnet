@@ -1,39 +1,73 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>The Yung Ulcer EP</title>
-    <meta http-equiv="Content-Language" content="en-us">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/02.css">
-    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
-    <script src="https://www.jakobutter.net/scripts/musicscript.js" defer></script>
+<title>Our Worlds</title>
+<head>
+    <title>jakobutter.net</title>
+  <meta http-equiv="Content-Language" content="en-us">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/02.css">
+  <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+  <script src="https://www.jakobutter.net/scripts/musicscript.js" defer></script>
 </head>
 <body class=ourworldstxt>
-    <div class="thugdiv" style="max-width:320px;">
-        <br>
-        <h2>Our Worlds</h2>
-        <img src="https://www.jakobutter.net/img/ow.jpg" alt="The Yung Ulcer EP Cover Art" style="margin-bottom:40px; margin-top:30px; width:50%;">
-        <br>
-        <audio id="player"></audio>
-        <button id="prevButton" onclick="prevSong()"><<</button>
-        <button id="playPauseButton" onclick="playPause()">></button>
-        <button id="nextButton" onclick="nextSong()">>></button>
-        <br><br>
-        <div id="progressBar" onclick="scrub(event)"><div></div></div>
-        <br><br>
-        <div id="songList"></div>
-        <script id="songData" type="application/json">
-        [
-            {"name": "You Know What?", "file": "/arkive/ulcerep/what.mp3"},
-            {"name": "Toddler", "file": "/arkive/ulcerep/toddler.mp3"},
-            {"name": "Guilty Conscience", "file": "/arkive/ulcerep/guilty.mp3"},
-            {"name": "Ulcer Chatter", "file": "/arkive/ulcerep/chatter.mp3"},
-            {"name": "Austin Powers", "file": "/arkive/ulcerep/powers.mp3"},
-            {"name": "I Keep My Hands Sanitized", "file": "/arkive/ulcerep/hands.mp3"},
-            {"name": "Fat People", "file": "/arkive/ulcerep/people.mp3"}
-        ]
-        </script>
-    </div>
+
+<div class=thugdiv style=max-width:320px;>
+<br>
+<br>
+<h2>Our Worlds</h2>
+<img src="https://www.jakobutter.net/img/ow.jpg" alt="The Yung Ulcer EP Cover Art" style="margin-bottom:40px; margin-top:30px; width:50%;">
+<br>
+
+<audio id="player" src="/arkive/ourworlds/willow.mp3"></audio>
+<button  id="prevButton" onclick="prevSong()"><<</button>
+<button id="playPauseButton" onclick="playPause()">></button>
+<button id="nextButton" onclick="nextSong()">>></button>
+<br>
+<br>
+<div id="progressBar" onclick="scrub(event)"><div></div></div>
+<br>
+<br>
+<div id="songList"></div>
+<br>
+<br>
+<script>
+var songs = [
+  {name: "WILLOW", file: "/arkive/ourworlds/willow.mp3"},
+  {name: "SKYE", file: "/arkive/ourworlds/skye.mp3"},
+  {name: "NIMBUS", file: "/arkive/ourworlds/nimbus.mp3"},
+  {name: "RAINLIGHT", file: "/arkive/ourworlds/rainlight.mp3"},
+  {name: "FINDING TIME", file: "/arkive/ourworlds/findingtime.mp3"},
+  {name: "BLEU VISTA", file: "/arkive/ourworlds/bleuvista.mp3"},
+  {name: "PIERRE", file: "/arkive/ourworlds/pierre.mp3"},
+  {name: "FLOWER GIRL", file: "/arkive/ourworlds/flower.mp3"},
+  {name: "WANTED U", file: "/arkive/ourworlds/you.mp3"},
+  {name: "SURREAL FEELING", file: "/arkive/ourworlds/surrealfeeling.mp3"},
+  {name: "ANDRÉ", file: "/arkive/ourworlds/andre.mp3"},
+  {name: "MEMO", file: "/arkive/ourworlds/memo.mp3"},
+  {name: "IN THE SOYFIELDS", file: "/arkive/ourworlds/inthesoyfields.mp3"},
+  {name: "REDROOFINN", file: "/arkive/ourworlds/redroofinn.mp3"},
+  {name: "6AM", file: "/arkive/ourworlds/6am.mp3"},
+  {name: "KOSMO", file: "/arkive/ourworlds/kosmo.mp3"},
+  {name: "TRANQUILITY", file: "/arkive/ourworlds/tranquility.mp3"},
+  {name: "ROTTERDAM", file: "/arkive/ourworlds/rotterdam.mp3"},
+  {name: "CAN'T REMEMBER", file: "/arkive/ourworlds/cantremember.mp3"},
+  {name: "TURN THIS WAY", file: "/arkive/ourworlds/turnthisway.mp3"},
+  {name: "U&ME", file: "/arkive/ourworlds/uandm3.mp3"},
+  {name: "THINKING OF U", file: "/arkive/ourworlds/thinkingofu.mp3"},
+  {name: "VINYL HEART", file: "/arkive/ourworlds/vinylheart.mp3"},
+  {name: "GREAT SAHARA", file: "/arkive/ourworlds/greatsahara.mp3"},
+  {name: "DAZED", file: "/arkive/ourworlds/dazed.mp3"},
+  {name: "KINDNESS", file: "/arkive/ourworlds/kindness.mp3"},
+  {name: "EMOTION 101", file: "/arkive/ourworlds/emotion101.mp3"},
+  {name: "DAYDREAM", file: "/arkive/ourworlds/daydream.mp3"},
+  {name: "ALL GONE", file: "/arkive/ourworlds/allgone.mp3"},
+  {name: "FINAL VOW", file: "/arkive/ourworlds/finalvow.mp3"}
+];
+</script>
+
+</div>
+
 </body>
 </html>
