@@ -78,6 +78,14 @@ width:100%;
     color: red;
 }
 
+.pinksisser #progressBar {
+    background-color: #black;
+}
+
+.pinksisser #progressBar div {
+    background-color: #red;
+}
+
 button {
     border: none;
     color: white;
