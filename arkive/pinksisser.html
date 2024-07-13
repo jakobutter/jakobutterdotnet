@@ -1,72 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>PINK SISSER EP</title>
-<style>
-body {
-    background-color: #A1F4C3;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    height: 100vh;
-    margin: 0;
-    color: black;
-  font-family: 'Arial', monospace;
-}
-#playerContainer {
-    text-align: center;
-    margin-top: 20px;
-}
-button {
-    border: none;
-    color: #A1F4C3;
-    width: 50px;
-    height: 50px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 50%;
-    background-color: black;
-}
-button:active {
-    background-color: #ff0000;
-}
-#songList {
-    margin-top: 20px;
-}
-.song {
-    cursor: pointer;
-}
-.song.playing {
-    font-weight: bold;
-}
-#progressBar {
-    width: 100%;
-    height: 20px;
-    background-color: black;
-}
-#progressBar div {
-    height: 100%;
-    width: 0%;
-    background-color: #ff0000;
-}
-</style>
+<title>Our Worlds</title>
+<head>
+    <title>jakobutter.net</title>
+  <meta http-equiv="Content-Language" content="en-us">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/02.css">
+  <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+  <script src="https://www.jakobutter.net/scripts/musicscript.js" defer></script>
 </head>
-<body>
+<body class=pinksisser>
 
-<div id="playerContainer">
+<div class=thugdiv style=max-width:320px;>
 <br>
 <br>
-<h2>PINK SISSER EP</h2>
+<h2>Our Worlds</h2>
+<img src="https://www.jakobutter.net/img/ow.jpg" alt="The Yung Ulcer EP Cover Art" style="margin-bottom:40px; margin-top:30px; width:50%;">
 <br>
-<audio id="player" src="/arkive/pinksisser/dishonor.mp3"></audio>
 
-<button  id="prevButton" onclick="prevSong()"><<</button>
-<button id="playPauseButton" onclick="playPause()">></button>
-<button id="nextButton" onclick="nextSong()">>></button>
+<audio id="player" src="/arkive/ourworlds/willow.mp3"></audio>
+<button class=pinksisserbutton  id="prevButton" onclick="prevSong()">⏮︎</button>
+<button class=pinksisserbutton id="playPauseButton" onclick="playPause()">▶</button>
+<button class=pinksisserbutton id="nextButton" onclick="nextSong()">⏭︎</button>
 <br>
 <br>
 <div id="progressBar" onclick="scrub(event)"><div></div></div>
@@ -75,84 +32,16 @@ button:active {
 <div id="songList"></div>
 <br>
 <br>
-<img src="/img/pinksisser.jpg" alt="PINK SISSER EP Cover Art" style="width:50%;">
 <script>
 var songs = [
   {name: "DISHONOR", file: "/arkive/pinksisser/dishonor.mp3"},
-  {name: "WANNALINK?", file: "/arkive/pinksisser/wannalink.mp3"},
+  {name: "WANNALINK", file: "/arkive/pinksisser/wannalink.mp3"},
   {name: "STOP TEXTING ME", file: "/arkive/pinksisser/stoptextingme.mp3"},
   {name: "LAUGH AT DEATH", file: "/arkive/pinksisser/laughatdeath.mp3"},
   {name: "FLYING DUTCHMAN", file: "/arkive/pinksisser/flyingdutchman.mp3"},
   {name: "WHOLE WORLD HATING", file: "/arkive/pinksisser/wholeworldhating.mp3"}
 ];
-var songIndex = 0;
-var audioPlayer = document.getElementById('player');
-var songList = document.getElementById('songList');
-var playPauseButton = document.getElementById('playPauseButton');
-var progressBar = document.getElementById('progressBar');
-
-audioPlayer.onended = function() {
-   nextSong();
-};
-
-audioPlayer.ontimeupdate = function() {
-   var progress = audioPlayer.currentTime / audioPlayer.duration * 100 + '%';
-   progressBar.children[0].style.width = progress; 
-};
-
-function playPause() {
-    if (audioPlayer.paused) {
-        audioPlayer.play();
-        playPauseButton.innerText = 'I I';
-    } else {
-        audioPlayer.pause();
-        playPauseButton.innerText = '>';
-    }
-}
-
-function nextSong() {
-    songIndex++;
-    if (songIndex > songs.length - 1) {
-        songIndex = 0;
-    }
-    playSong();
-}
-
-function prevSong() {
-    songIndex--;
-    if (songIndex < 0) {
-        songIndex = songs.length - 1;
-    }
-    playSong();
-}
-
-function playSong() {
-    audioPlayer.src = songs[songIndex].file;
-    audioPlayer.play();
-    playPauseButton.innerText = 'I I';
-    updateSongList();
-}
-
-function updateSongList() {
-   songList.innerHTML = songs.map(function(song, index) {
-       return '<div class="song' + (index === songIndex ? ' playing' : '') + '" onclick="selectSong(' + index + ')">' + song.name + '</div>';
-   }).join('');
-}
-
-function selectSong(index) {
-   songIndex = index;
-   playSong();
-}
-
-function scrub(event) {
-   var x = event.offsetX / progressBar.offsetWidth * audioPlayer.duration; 
-   audioPlayer.currentTime = x; 
-}
-
-updateSongList();
 </script>
-
 </div>
-
 </body>
 </html>
