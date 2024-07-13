@@ -3,37 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simple Music Player</title>
-
-  <!-- Load the custom CSS style file -->
-  <link rel="stylesheet" href="/02.css">
+  <title>Music Player</title>
 </head>
 <body>
-  <div class="player">
-    <div class="details">
-      <div class="now-playing">PLAYING x OF y</div>
-      <div class="track-art"></div>
-      <div class="track-name">Track Name</div>
-      <div class="track-artist">Track Artist</div>
-    </div>
-    <div class="buttons">
-      <div class="prev-track" onclick="prevTrack()"><i class="fa fa-step-backward fa-2x"></i></div>
-      <div class="playpause-track" onclick="playpauseTrack()"><i class="fa fa-play-circle fa-5x"></i></div>
-      <div class="next-track" onclick="nextTrack()"><i class="fa fa-step-forward fa-2x"></i></div>
-    </div>
-    <div class="slider_container">
-      <div class="current-time">00:00</div>
-      <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
-      <div class="total-duration">00:00</div>
-    </div>
-    <div class="slider_container">
-      <i class="fa fa-volume-down"></i>
-      <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()">
-      <i class="fa fa-volume-up"></i>
-    </div>
-  </div>
+  <div class="now-playing"></div>
+  <div class="track-name"></div>
+  <button class="playpause-track"></button>
+  <button class="next-track"></button>
+  <button class="prev-track"></button>
+  <input type="range" class="seek_slider">
+  <div class="current-time"></div>
+  <div class="total-duration"></div>
 
-  <!-- Load the main script for the player -->
-  <script src="/scripts/musicscript.js"></script>
+  <!-- Track list data -->
+  <script type="application/json" id="tracklist">
+  [
+    {
+      "name": "Night Owl",
+      "path": "https://files.freemusicarchive.org/storage-freemusicarchive-org/music/WFMU/Broke_For_Free/Directionless_EP/Broke_For_Free_-_01_-_Night_Owl.mp3"
+    },
+    {
+      "name": "Enthusiast",
+      "path": "https://files.freemusicarchive.org/storage-freemusicarchive-org/music/WFMU/Broke_For_Free/Directionless_EP/Broke_For_Free_-_02_-_Enthusiast.mp3"
+    }
+  ]
+  </script>
+
+  <script src="scripts/musicscript.js"></script>
 </body>
 </html>
