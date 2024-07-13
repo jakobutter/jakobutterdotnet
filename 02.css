@@ -87,8 +87,9 @@ width:100%;
 }
 
 .evergreen {
-    background-color: #a1f4c3;
-    color: black;
+    background-color: #000000;
+    color: #FFFFFF;
+    text-shadow: -2px -1px 2px #F86275, 2px 1px 2px #FA8F60;
     font-family: 'Arial';
 }
 
