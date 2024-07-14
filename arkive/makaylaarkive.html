@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Makayla Arkive</title>
+    <title>jakobutter.net</title>
+  <meta http-equiv="Content-Language" content="en-us">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/02.css">
+  <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+  <script src="https://www.jakobutter.net/scripts/musicscript.js" defer></script>
+  <style>
+#progressBar {
+    background-color: #000000;
+}
+#progressBar div {
+    background-color: linear-gradient(45deg,#C21E0F,#439D39,#CA7730,#5D517C,#B3262F,#5D517C);
+   background-size: 1000% 1000%;
+   animation: rainbow 10s ease infinite;
+</style>
+</head>
+<body class=arkive>
+
+<div class=thugdiv style=max-width:320px;>
+<br>
+<br>
+<h2>Makayla Arkive</h2>
+<img src="https://www.jakobutter.net/img/makayla-arkive-cover.jpg" alt="The Yung Ulcer EP Cover Art" style="margin-bottom:40px; margin-top:30px; width:50%;">
+<br>
+
+<audio id="player" src="/arkive/makayla/nomorefalsealarms.mp3"></audio>
+<button class=arkivebutton  id="prevButton" onclick="prevSong()">⏮︎</button>
+<button class=arkivebutton id="playPauseButton" onclick="playPause()">▶</button>
+<button class=arkivebutton id="nextButton" onclick="nextSong()">⏭︎</button>
+<br>
+<br>
+<div id="progressBar" class=pinksisserbar onclick="scrub(event)"><div></div></div>
+<br>
+<br>
+<div id="songList"></div>
+<br>
+<br>
+<script>
+var songs = [
+  {name: "No More False Alarms", file: "/arkive/makayla/nomorefalsealarms.mp3"},
+  {name: "Wasting Away Pt. 1", file: "/arkive/makayla/wastingawayp1.mp3"},
+  {name: "XXX", file: "/arkive/makayla/xxx.mp3"},
+  {name: "Thru The Peephole", file: "/arkive/makayla/thruthepeephole.mp3"},
+  {name: "Just What You Like", file: "/arkive/makayla/justwhatyoulike.mp3"},
+  {name: "Paid In Full", file: "/arkive/makayla/paidinfull.mp3"},
+  {name: "Pistols", file: "/arkive/makayla/pistols.mp3"},
+  {name: "Anomaly Detected", file: "/arkive/makayla/anomalydetected.mp3"},
+  {name: "Wasting Away Pt. 2", file: "/arkive/makayla/wastingawayp2.mp3"}
+];
+</script>
+</div>
+</body>
+</html>
