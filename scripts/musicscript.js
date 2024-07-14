@@ -47,6 +47,21 @@ function playSong() {
     playPauseButton.innerText = '⏸︎';
     document.title = songs[songIndex].name; // Update the document title
     updateSongList();
+
+    if ('mediaSession' in navigator) {
+        navigator.mediaSession.metadata = new MediaMetadata({
+            title: songs[songIndex].name,
+            artist: songs[songIndex].artist || 'Unknown Artist',
+            album: songs[songIndex].album || 'Unknown Album',
+            artwork: [
+                { src: songs[songIndex].artwork || 'default.jpg', sizes: '512x512', type: 'image/jpeg' }
+            ]
+        });
+        navigator.mediaSession.setActionHandler('play', playPause);
+        navigator.mediaSession.setActionHandler('pause', playPause);
+        navigator.mediaSession.setActionHandler('previoustrack', prevSong);
+        navigator.mediaSession.setActionHandler('nexttrack', nextSong);
+    }
 }
 
 function updateSongList() {
