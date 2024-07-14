@@ -180,6 +180,18 @@ background-image: linear-gradient(45deg,#C21E0F,#439D39,#CA7730,#5D517C,#B3262F,
     font-family: 'Courier New';
 }
 
+.cthulu {
+    background-color: #000000;
+    color: #FF0073;
+    font-family: 'Chicago';
+    text-shadow: 0.5px 0.5px 2px #FF0073, -0.5px -0.5px 2px #FF0073;
+}
+
+.cthulubutton {
+    background-color: #FF0073;
+    color: #000000;
+}
+
 button {
     border: none;
     color: white;
