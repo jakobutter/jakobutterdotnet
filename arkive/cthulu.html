@@ -1,35 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
+<title>CTHULU BLACKPILL</title>
+    <title>jakobutter.net</title>
+  <meta http-equiv="Content-Language" content="en-us">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Music Player</title>
   <link rel="stylesheet" href="/02.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
   <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
   <script src="https://www.jakobutter.net/scripts/musicscript.js" defer></script>
+  <style>
+#progressBar {
+    background-color: #88003D;
+}
+#progressBar div {
+    background-color: #FF0073;
+</style>
 </head>
-<body>
-  <div class="track-name"></div>
-  <button class="playpause-track"></button>
-  <button class="next-track"></button>
-  <button class="prev-track"></button>
-  <input type="range" class="seek_slider">
-  <div class="current-time"></div>
-  <div class="total-duration"></div>
+<body class=cthulu>
 
-  <script type="application/json" id="tracklist">
-  [
-    {
-      "name": "Night Owl",
-      "path": "https://files.freemusicarchive.org/storage-freemusicarchive-org/music/WFMU/Broke_For_Free/Directionless_EP/Broke_For_Free_-_01_-_Night_Owl.mp3"
-    },
-    {
-      "name": "Enthusiast",
-      "path": "https://files.freemusicarchive.org/storage-freemusicarchive-org/music/WFMU/Broke_For_Free/Directionless_EP/Broke_For_Free_-_02_-_Enthusiast.mp3"
-    }
-  ]
-  </script>
+<div class=thugdiv style=max-width:320px;>
+<br>
+<br>
+<h2>CTHULU BLACKPILL</h2>
+<img src="https://www.jakobutter.net/img/8.png" alt="The Yung Ulcer EP Cover Art" style="margin-bottom:40px; margin-top:30px; width:50%;">
+<br>
 
+<audio id="player" src="/arkive/pinksisser/dishonor.mp3"></audio>
+<button class=cthulubutton  id="prevButton" onclick="prevSong()">⏮︎</button>
+<button class=cthulubutton id="playPauseButton" onclick="playPause()">▶</button>
+<button class=cthulubutton id="nextButton" onclick="nextSong()">⏭︎</button>
+<br>
+<br>
+<div id="progressBar" onclick="scrub(event)"><div></div></div>
+<br>
+<br>
+<div id="songList"></div>
+<br>
+<br>
+<script>
+var songs = [
+  {name: "GLOWING", file: "/arkive/cthulu/glowing.mp3"},
+  {name: "YUNG TIRE SLASHER", file: "/arkive/cthulu/yungtireslasher.mp3"},
+  {name: "WILDABEAST", file: "/arkive/cthulu/wildabeast.mp3"},
+  {name: "THESE VISIONS", file: "/arkive/cthulu/thesevisions.mp3"},
+  {name: "NEW BENZ", file: "/arkive/cthulu/newbenz.mp3"},
+  {name: "MARIJA'S SONG", file: "/arkive/cthulu/marijassong.mp3"},
+    {name: "COLD SPELL", file: "/arkive/cthulu/coldspell.mp3"},
+  {name: "GOD FORBID", file: "/arkive/cthulu/godforbid.mp3"},
+  {name: "LEGAL LOVE", file: "/arkive/cthulu/legallove.mp3"},
+  {name: "TRU HAPPINESS", file: "/arkive/cthulu/truhappiness.mp3"}
+];
+</script>
+</div>
 </body>
 </html>
