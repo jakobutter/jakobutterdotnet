@@ -52,7 +52,7 @@ function playSong() {
     if ('mediaSession' in navigator) {
         navigator.mediaSession.metadata = new MediaMetadata({
             title: songs[songIndex].name,
-            artist: songs[songIndex].artist || 'Unknown Artist',
+            artist: songs[songIndex].artist || 'Yung Ulcer',
             album: songs[songIndex].album || 'Unknown Album',
             artwork: [
                 { src: pageArtwork.src, sizes: '512x512', type: 'image/jpeg' }
