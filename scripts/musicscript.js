@@ -45,6 +45,7 @@ function playSong() {
     audioPlayer.src = songs[songIndex].file;
     audioPlayer.play();
     playPauseButton.innerText = '⏸︎';
+    document.title = songs[songIndex].name; // Update the document title
     updateSongList();
 }
 
