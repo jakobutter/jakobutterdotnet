@@ -4,6 +4,7 @@ var songList = document.getElementById('songList');
 var playPauseButton = document.getElementById('playPauseButton');
 var progressBar = document.getElementById('progressBar');
 var timeDisplay = document.getElementById('timeDisplay');
+var pageArtwork = document.getElementById('pageArtwork'); // Select the image element
 
 audioPlayer.onended = function() {
    nextSong();
@@ -54,7 +55,7 @@ function playSong() {
             artist: songs[songIndex].artist || 'Unknown Artist',
             album: songs[songIndex].album || 'Unknown Album',
             artwork: [
-                { src: songs[songIndex].artwork || 'default.jpg', sizes: '512x512', type: 'image/jpeg' }
+                { src: pageArtwork.src, sizes: '512x512', type: 'image/jpeg' }
             ]
         });
         navigator.mediaSession.setActionHandler('play', playPause);
