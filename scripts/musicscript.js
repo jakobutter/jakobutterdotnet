@@ -3,6 +3,7 @@ var audioPlayer = document.getElementById('player');
 var songList = document.getElementById('songList');
 var playPauseButton = document.getElementById('playPauseButton');
 var progressBar = document.getElementById('progressBar');
+var timeDisplay = document.getElementById('timeDisplay');
 
 audioPlayer.onended = function() {
    nextSong();
@@ -11,6 +12,7 @@ audioPlayer.onended = function() {
 audioPlayer.ontimeupdate = function() {
    var progress = audioPlayer.currentTime / audioPlayer.duration * 100 + '%';
    progressBar.children[0].style.width = progress; 
+   updateTimeDisplay();
 };
 
 function playPause() {
@@ -42,7 +44,7 @@ function prevSong() {
 function playSong() {
     audioPlayer.src = songs[songIndex].file;
     audioPlayer.play();
-    playPauseButton.innerText = 'I I';
+    playPauseButton.innerText = '⏸︎';
     updateSongList();
 }
 
@@ -60,6 +62,18 @@ function selectSong(index) {
 function scrub(event) {
    var x = event.offsetX / progressBar.offsetWidth * audioPlayer.duration; 
    audioPlayer.currentTime = x; 
+}
+
+function updateTimeDisplay() {
+    var currentMinutes = Math.floor(audioPlayer.currentTime / 60);
+    var currentSeconds = Math.floor(audioPlayer.currentTime % 60);
+    var durationMinutes = Math.floor(audioPlayer.duration / 60);
+    var durationSeconds = Math.floor(audioPlayer.duration % 60);
+
+    if (currentSeconds < 10) currentSeconds = '0' + currentSeconds;
+    if (durationSeconds < 10) durationSeconds = '0' + durationSeconds;
+
+    timeDisplay.innerText = currentMinutes + ':' + currentSeconds + ' / ' + durationMinutes + ':' + durationSeconds;
 }
 
 updateSongList();
