@@ -58,6 +58,10 @@ width:100%;
     font-size: 20px;
   }
 
+img {
+    image-rendering: pixelated;
+    }
+
 @keyframes rainbow {
          0% {background-position:0% 100%}
          50%{background-position:100% 0%}
