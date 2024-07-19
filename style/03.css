@@ -60,6 +60,11 @@ img {
     image-rendering: pixelated;
     }
 
+a[href] {
+  color: var(--maincolor);
+  text-decoration: none;
+  }
+
 @keyframes rainbow {
          0% {background-position:0% 100%}
          50%{background-position:100% 0%}
