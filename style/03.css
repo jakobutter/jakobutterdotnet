@@ -28,6 +28,13 @@ background-repeat: z;
   color: var(--hovercolor);
   }
 
+div[class=cooldiv]
+        {height: 5px; 
+            width:100%; 
+            background-color: var(--maincolor);
+            margin: auto; 
+        }
+
 .thugdiv
         {
 height: 100%;  
