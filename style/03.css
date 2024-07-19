@@ -47,15 +47,6 @@ width:100%;
         max-width: fit-content; 
         } 
 
-.abutton {
-    border-width: 2px; 
-    border-style: solid; 
-    padding: 5px;
-        padding-top: 5px;
-        padding-bottom: 5px;
-    font-size: 20px;
-  }
-
 img {
     image-rendering: pixelated;
     }
@@ -63,10 +54,12 @@ img {
 href {
   text-color: var(--maincolor);
   text-decoration: none;
-  }
-  
-a[href] {
-  background-color: #F0FF4C;
+  border-width: 2px; 
+  border-style: solid; 
+  padding: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 20px;
   }
 
 @keyframes rainbow {
