@@ -54,6 +54,8 @@ width:100%;
         padding-top: 0.25em;
         padding-bottom: 0.25em;
     font-size: 20px;
+    background-color: var(--maincolor);
+    border-color: var(--altcolor);
   }
 
 img {
