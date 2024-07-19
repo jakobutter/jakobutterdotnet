@@ -54,13 +54,15 @@ width:100%;
         padding-top: 0.25em;
         padding-bottom: 0.25em;
     font-size: 20px;
-    background-color: var(--maincolor);
-    border-color: var(--altcolor);
   }
 
 img {
     image-rendering: pixelated;
     }
+
+href:visited {
+  color: var(--maincolor);
+  }
 
 @keyframes rainbow {
          0% {background-position:0% 100%}
