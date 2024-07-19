@@ -51,7 +51,7 @@ img {
     image-rendering: pixelated;
     }
 
-href {
+a[href] {
   text-color: var(--maincolor);
   text-decoration: none;
   border-width: 2px; 
