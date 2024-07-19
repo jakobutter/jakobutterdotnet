@@ -60,6 +60,10 @@ img {
     image-rendering: pixelated;
     }
 
+href {
+  color: var(--maincolor);
+  }
+
 href:visited {
   color: var(--maincolor);
   }
