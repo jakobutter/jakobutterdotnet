@@ -51,24 +51,14 @@ width:100%;
     border-width: 2px; 
     border-style: solid; 
     padding: 5px;
-        padding-top: 0.25em;
-        padding-bottom: 0.25em;
+        padding-top: 5px;
+        padding-bottom: 5px;
     font-size: 20px;
   }
 
 img {
     image-rendering: pixelated;
     }
-  
-a[href] {
-  color: #FFFFFF;
-  text-decoration: none;
-  }
-  
-a[href]:visited {
-  color: #FFFFFF;
-  text-decoration: none;
-  }
 
 @keyframes rainbow {
          0% {background-position:0% 100%}
