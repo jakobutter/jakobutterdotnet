@@ -62,8 +62,11 @@ img {
 
 href {
   text-color: var(--maincolor);
-  background-color: #F0FF4C;
   text-decoration: none;
+  }
+  
+a[href] {
+  background-color: #F0FF4C;
   }
 
 @keyframes rainbow {
