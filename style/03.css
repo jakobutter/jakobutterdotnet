@@ -5,6 +5,13 @@
     --altcolor: #FF0073;
 }
 
+body {
+    background-color:black;
+background-image: url("img/001.gif");
+background-repeat: z;
+  height: 100%;
+}
+
 @font-face { font-family: Chicago; src: url('Chicago.ttf'); } 
 @font-face { font-family: handelgothic; src: url('handelgothic.otf'); }
 @font-face { font-family: simsun; src: url('simsun.ttf'); } 
