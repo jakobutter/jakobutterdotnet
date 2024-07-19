@@ -53,14 +53,7 @@ width:100%;
         padding-top: 0.25em;
         padding-bottom: 0.25em;
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 400% 400%;
-    animation: rainbow 5s ease infinite;
-   margin: 20px;
-   line-height: 250%;
-text-decoration: none;
-background-color: var(--maincolor);
-    border-color: var(--maincolor);
+    -webkit-text-fill-color: var(--maincolor);
   }
 
 @keyframes rainbow {
