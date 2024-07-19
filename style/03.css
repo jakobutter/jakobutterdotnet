@@ -60,8 +60,8 @@ img {
     image-rendering: pixelated;
     }
 
-a[href] {
-  color: var(--maincolor);
+href {
+  text-color: var(--maincolor);
   text-decoration: none;
   }
 
