@@ -11,17 +11,11 @@
 @font-face { font-family: pokemon; src: url('style/pokemon.ttf'); } 
 @font-face { font-family: tahoma; src: url('style/tahoma.ttf'); } 
 
-  h1:hover {
-    color: var(--hovercolor);
-  }
-  h2:hover {
-    color: var(--hovercolor);
-  }
-  h3:hover {
-    color: var(--hovercolor);
+.pylori {
+  font-family: Chicago;
   }
 
-        div[class=thugdiv]
+.thugdiv
         {
 height: 100%;  
 width:100%;  
@@ -31,6 +25,21 @@ width:100%;
         position:relative;
         max-width: fit-content; 
         } 
+
+.abutton {
+    border-width: 2px; 
+    border-style: solid; 
+    padding: 0.5em;
+        padding-top: 0.25em;
+        padding-bottom: 0.25em;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400% 400%;
+    animation: rainbow 5s ease infinite;
+   margin: 20px;
+   line-height: 250%;
+text-decoration: none;
+  }
 
 @keyframes rainbow {
          0% {background-position:0% 100%}
