@@ -2,6 +2,7 @@
 :root {
     --maincolor: #007f00;
     --hovercolor: #ffffff;
+    --altcolor: #FF0073;
 }
 
 @font-face { font-family: Chicago; src: url('Chicago.ttf'); } 
@@ -12,7 +13,12 @@
 @font-face { font-family: tahoma; src: url('style/tahoma.ttf'); } 
 
 .pylori {
-  font-family: Chicago;
+  color: var(--maincolor);
+  font-family: pokemon;
+  }
+  
+:hover {
+  color: var(--hovercolor);
   }
 
 .thugdiv
