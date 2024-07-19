@@ -16,7 +16,7 @@ background-repeat: z;
 @font-face { font-family: handelgothic; src: url('handelgothic.otf'); }
 @font-face { font-family: simsun; src: url('simsun.ttf'); } 
 @font-face { font-family: rodin; src: url('rodin.otf'); } 
-@font-face { font-family: pokemon; src: url('./style/pokemon.ttf') }
+@font-face { font-family: pokemon; src: url('./style/pokemon.ttf'); }
 @font-face { font-family: tahoma; src: url('style/tahoma.ttf'); } 
 
 .pylori {
