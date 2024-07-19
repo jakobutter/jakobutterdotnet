@@ -22,6 +22,7 @@ background-repeat: z;
 .pylori {
   color: var(--maincolor);
   font-family: pokemon;
+  font-weight: normal;
   }
   
 text:hover {
