@@ -50,7 +50,7 @@ width:100%;
 .abutton {
     border-width: 2px; 
     border-style: solid; 
-    padding: 0.5em;
+    padding: 5px;
         padding-top: 0.25em;
         padding-bottom: 0.25em;
     font-size: 20px;
@@ -59,13 +59,10 @@ width:100%;
 img {
     image-rendering: pixelated;
     }
-
-href {
-  color: var(--maincolor);
-  }
-
-href:visited {
-  color: var(--maincolor);
+  
+a:href {
+  color: #FFFFFF;
+  text-decoration: none;
   }
 
 @keyframes rainbow {
