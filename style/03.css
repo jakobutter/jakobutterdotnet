@@ -60,7 +60,8 @@ a:link {
     padding-top: 5px;
       padding-bottom: 5px;
   margin: 20px;
-  font-size: 20px;
+  font-size: 24px;
+  line-height: 250%;
   }
   
 a:visited {
