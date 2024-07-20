@@ -54,10 +54,7 @@ img {
 a:link {
   color: var(--maincolor);
   background-color: transparent;
-  text-decoration: none;
-
-a[href] {
-  border-width: 2px; 
+    border-width: 2px; 
   border-style: solid; 
   padding: 5px;
   padding-top: 5px;
