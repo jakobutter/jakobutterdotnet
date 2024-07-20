@@ -3,6 +3,7 @@
     --maincolor: #BADBFF;
     --hovercolor: #ffffff;
     --altcolor: #FF0073;
+    --deffont: pokemon;
 }
 
 body {
@@ -79,9 +80,10 @@ button {
   color: #000000;
   background-color: var(--maincolor);
     border-width: 2px; 
-  border-style: solid; 
+  border-style: transparent; 
   font-size: 24px;
   line-height: 250%;
+  font-family: var(--deffont);
   }
 
 @keyframes rainbow {
