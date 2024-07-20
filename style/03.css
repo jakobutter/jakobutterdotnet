@@ -63,7 +63,7 @@ a:link {
   margin: 20px;
   font-size: 24px;
   line-height: 250%;
-  max-width: 20px; 
+  max-width: 10px; 
   }
   
 a:visited {
@@ -80,7 +80,8 @@ button {
   color: #000000;
   background-color: var(--maincolor);
     border-width: 2px; 
-  border-style: transparent; 
+  border-color: black; 
+      padding:5px;
   font-size: 24px;
   line-height: 250%;
   font-family: var(--deffont);
