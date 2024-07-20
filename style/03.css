@@ -52,11 +52,13 @@ img {
     }
     
 a:link {
-  color: var(--maincolor);
-  background-color: var(--altcolor);
+  color: #000000;
+  background-color: var(--maincolor);
     border-width: 2px; 
   border-style: solid; 
   padding: 25px;
+    padding-top: 5px;
+      padding-bottom: 5px;
   margin: 20px;
   font-size: 20px;
   }
