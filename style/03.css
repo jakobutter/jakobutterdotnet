@@ -57,12 +57,9 @@ a:link {
   background-color: var(--maincolor);
     border-width: 2px; 
   border-style: solid; 
-  padding: 25px;
-    padding-top: 5px;
-      padding-bottom: 5px;
+  padding: 10px;
   margin: 20px;
   font-size: 24px;
-  line-height: 250%;
   }
   
 a:visited {
