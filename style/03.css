@@ -63,7 +63,6 @@ padding: 25px;
    margin: 20px;
    font-size: 24px;
    line-height: 250%;
-      -webkit-background-clip: text;
     background-size: 400% 400%;
     animation: rainbow 5s ease infinite;
    }
