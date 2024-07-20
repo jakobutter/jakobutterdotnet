@@ -1,8 +1,10 @@
 
 :root {
-    --maincolor: #BADBFF;
+    --maincolor: #00F700;
     --hovercolor: #ffffff;
     --altcolor: #FF0073;
+    --twocolor: #F0FF4C;
+    --threecolor: #a1f4c3;
     --deffont: rodin;
 }
 
