@@ -62,7 +62,7 @@ a:link {
   margin: 20px;
   font-size: 24px;
   line-height: 250%;
-  max-width: 64px; 
+  max-width: 20px; 
   }
   
 a:visited {
@@ -73,6 +73,15 @@ a:visited {
 a:hover {
   color: #000000;
   background-color: var(--hovercolor);
+  }
+  
+button {
+  color: #000000;
+  background-color: var(--maincolor);
+    border-width: 2px; 
+  border-style: solid; 
+  font-size: 24px;
+  line-height: 250%;
   }
 
 @keyframes rainbow {
