@@ -1,10 +1,10 @@
 
 :root {
-    --maincolor: #00F700;
+    --color1: #00F700;
+    --color2: #FF0073;
+    --color3: #F0FF4C;
+    --color4: #a1f4c3;
     --hovercolor: #ffffff;
-    --altcolor: #FF0073;
-    --twocolor: #F0FF4C;
-    --threecolor: #a1f4c3;
     --deffont: rodin;
 }
 
@@ -23,7 +23,7 @@ background-repeat: z;
 @font-face { font-family: tahoma; src: url('style/tahoma.ttf'); } 
 
 .pylori {
-  color: var(--maincolor);
+  color: var(--color1);
   font-family: var(--deffont);
   font-weight: normal;
   }
@@ -35,7 +35,7 @@ text:hover {
 div[class=cooldiv]
         {height: 5px; 
             width:100%; 
-            background-color: var(--maincolor);
+            background-color: var(--color1);
             margin: auto; 
         }
 
@@ -56,7 +56,7 @@ img {
     
 a:link {
   color: #000000;
-  background-color: var(--maincolor);
+  background-color: var(--color1);
     border-width: 2px; 
   border-style: solid; 
 padding: 25px;
@@ -72,7 +72,7 @@ padding: 25px;
   
 a:visited {
   color: #000000;
-  background-color: var(--maincolor);
+  background-color: var(--color1);
   }
 
 a:hover {
@@ -82,7 +82,7 @@ a:hover {
   
 button {
   color: #000000;
-  background-color: var(--maincolor);
+  background-color: var(--color1);
     border-width: 2px; 
   border-color: black; 
       padding:10px;
