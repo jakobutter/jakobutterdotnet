@@ -3,7 +3,7 @@
     --maincolor: #BADBFF;
     --hovercolor: #ffffff;
     --altcolor: #FF0073;
-    --deffont: pokemon;
+    --deffont: rodin;
 }
 
 body {
@@ -22,7 +22,7 @@ background-repeat: z;
 
 .pylori {
   color: var(--maincolor);
-  font-family: pokemon;
+  font-family: var(--deffont);
   font-weight: normal;
   }
   
