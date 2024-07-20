@@ -51,10 +51,10 @@ img {
     image-rendering: pixelated;
     }
     
-href {
-  text-color: var(--maincolor);
+a:link {
+  color: var(--maincolor);
+  background-color: transparent;
   text-decoration: none;
-  }
 
 a[href] {
   border-width: 2px; 
