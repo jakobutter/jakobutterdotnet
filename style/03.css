@@ -83,7 +83,7 @@ a:hover {
 button {
   color: #000000;
   background-color: var(--color1);
-    border-width: 2px; 
+    border-width: 1px; 
       padding:10px;
   font-size: 18px;
   font-family: var(--deffont);
