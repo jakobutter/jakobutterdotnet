@@ -84,8 +84,10 @@ button {
   color: #000000;
   background-color: var(--color1);
     border-width: 1px; 
-  width: 0px;
-    height: 0px;
+  width: 18px;
+    height: 18px;
+    max-width:50%;
+    max-height:50%;
     text-align: center;
     text-decoration: none;
     display: inline-block;
