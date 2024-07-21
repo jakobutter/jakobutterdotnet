@@ -58,11 +58,12 @@ a:link {
   color: #000000;
   background-color: var(--color1);
     border-width: 2px; 
+    max-width:20px;
   border-style: solid; 
 padding: 15px 32px;
       margin:20px;
    font-size: 24px;
--webkit-box-sizing:24px;
+box-sizing: content-box;
    line-height: 250%;
     background-size: 400% 400%;
     animation: rainbow 5s ease infinite;
