@@ -83,11 +83,9 @@ a:hover {
 button {
   color: #000000;
   background-color: var(--color1);
-    border-width: 1px; 
+    border-width: 1px;
   width: 18px;
     height: 18px;
-    justify-content:center;
-    text-align:center;
     margin-left:0px;
     margin-right:0px;
   }
