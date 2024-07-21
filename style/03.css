@@ -62,7 +62,7 @@ a:link {
 padding: 15px 32px;
       margin:20px;
    font-size: 24px;
-  line-width: 40px;
+-webkit-box-sizing:24px;
    line-height: 250%;
     background-size: 400% 400%;
     animation: rainbow 5s ease infinite;
