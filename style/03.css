@@ -61,7 +61,7 @@ a:link {
   border-style: solid; 
      padding-top: 5px;
        padding-bottom: 5px;
-      padding:15px;
+      margin:15px;
    font-size: 24px;
   line-width: 20px;
    line-height: 250%;
@@ -89,6 +89,7 @@ button {
     text-decoration: none;
     display: inline-block;
     cursor: pointer;
+    position: relative;
   }
 
 a[href="/releases"] {background-image: linear-gradient(45deg, #FFC7EE, #FFF0FA);}
