@@ -58,9 +58,10 @@ a:link {
   color: #000000;
   background-color: var(--color1);
     border-width: 2px; 
-max-width: 20px;
   border-style: solid; 
 padding: 15px;
+padding-top: 5px;
+padding-bottom: 5px;
       margin:20px;
    font-size: 24px;
 box-sizing: border-box;
