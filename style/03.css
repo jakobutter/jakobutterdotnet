@@ -86,6 +86,14 @@ h1[href]
     background-color:none;
     color: var(--color1);
 }
+
+.hrefimg
+{
+    text-decoration:none;
+    background-color:none;
+margin:0px;
+padding:0px;
+}
     
   
 button {
