@@ -9,17 +9,13 @@
 }
 
 body {
-    background-color:black;
-background-image: url("img/001.gif");
-background-repeat: z;
-  height: 100%;
-}
-
-txt
-{
-    color: var(--color1);
-  font-family: var(--deffont);
-  font-weight: normal;
+ background-color:black;
+ background-image: url("img/001.gif");
+ background-repeat: z;
+ height: 100%;
+ color: var(--color1);
+ font-family: var(--deffont);
+ font-weight: normal;
 }
 
 @font-face { font-family: Chicago; src: url('Chicago.ttf'); } 
