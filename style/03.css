@@ -24,12 +24,6 @@ body {
 @font-face { font-family: rodin; src: url('rodin.otf'); } 
 @font-face { font-family: pokemon; src: url('pokemon.ttf'); }
 @font-face { font-family: tahoma; src: url('style/tahoma.ttf'); } 
-
-.pylori {
-  color: var(--color1);
-  font-family: var(--deffont);
-  font-weight: normal;
-  }
   
 text:hover {
   color: var(--hovercolor);
@@ -85,6 +79,14 @@ a:hover {
   color: #000000;
   background-color: var(--hovercolor);
   }
+
+h1[href]
+{
+    text-decoration:underline;
+    background-color:none;
+    color: var(--color1);
+}
+    
   
 button {
   color: #000000;
