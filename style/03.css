@@ -92,17 +92,8 @@ h2
 font-size: 24px;
 font-weight: normal;
 }
-
-.hrefimg
-{
-    text-decoration:none;
-    background-color:none;
-margin:0px;
-padding:0px;
-}
     
-  
-button {
+abutton {
   color: #000000;
   background-color: var(--color1);
     border-width: 1px;
