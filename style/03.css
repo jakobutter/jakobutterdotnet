@@ -93,7 +93,7 @@ font-size: 24px;
 font-weight: normal;
 }
     
-abutton {
+.colorButton {
   color: #000000;
   background-color: var(--color1);
     border-width: 1px;
