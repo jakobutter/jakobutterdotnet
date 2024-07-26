@@ -15,6 +15,13 @@ background-repeat: z;
   height: 100%;
 }
 
+text
+{
+    color: var(--color1);
+  font-family: var(--deffont);
+  font-weight: normal;
+}
+
 @font-face { font-family: Chicago; src: url('Chicago.ttf'); } 
 @font-face { font-family: handelgothic; src: url('handelgothic.otf'); }
 @font-face { font-family: simsun; src: url('simsun.ttf'); } 
