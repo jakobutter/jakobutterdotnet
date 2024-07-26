@@ -54,7 +54,7 @@ img {
             margin: auto;
     }
     
-a:link {
+.abutton {
   color: #000000;
   background-color: var(--color1);
     border-width: 2px; 
