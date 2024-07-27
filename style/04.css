@@ -94,7 +94,7 @@ max-width: 1024px;
         }
 
 .galimg {
-            flex: 1 1 calc(33.333% - 20px);
+            flex: 1 1 calc(50% - 20px);
             box-sizing: border-box;
             text-align: center;
             
@@ -112,7 +112,7 @@ max-width: 1024px;
         }
 
 .galhovimg {
-    flex: 1 1 calc(33.333% - 20px);
+    flex: 1 1 calc(50% - 20px);
     box-sizing: border-box;
     text-align: center;
             position: relative;
