@@ -23,7 +23,7 @@
 <div class="cooldiv" style="max-width:348px; "></div>
 
       <h1>happy anniversary!!! :-)</h1>
-
+<div class="time" id="timePassed"></div>
 <br>
 <div class="galdiv ">
     <div class="galimg">
@@ -45,6 +45,25 @@
 </div>
 <br>
 <br>
+    <script>
+        function updateTime() {
+            const startTime = new Date('July 28, 2023 21:00:00');
+            const currentTime = new Date();
+            const timeDiff = currentTime - startTime;
 
+            const years = Math.floor(timeDiff / (1000 * 60 * 60 * 24 * 365));
+            const months = Math.floor((timeDiff % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30));
+            const days = Math.floor((timeDiff % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+
+            document.getElementById('timePassed').innerText = 
+                `${years} years, ${months} months, ${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
+        }
+
+        setInterval(updateTime, 1000);
+        updateTime();
+    </script>
 </body>
 </html>
