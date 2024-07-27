@@ -71,15 +71,18 @@ box-sizing: border-box;
    }
 
 .entbutton {
+    color: #000000;
+    background-color: var(--color1);
       padding: 1em;
       padding-top: 0.75em;
       padding-bottom: 0.75em;
       background-size: 400% 400%;
-      animation: rainbow 1s ease infinite;
+      animation: rainbow 5s ease infinite;
 background-image: linear-gradient(180deg, var(--maincolor), #FFFFFF);
     }
   
 .entbuttonoffl {
+    color: #000000;
       padding: 1em;
       padding-top: 0.75em;
       padding-bottom: 0.75em;
