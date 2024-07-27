@@ -57,6 +57,7 @@ h1
    -webkit-text-fill-color: transparent;
    background-size: 400% 400%;
    animation: rainbow 10s ease infinite;
+   text-shadow: -2px -1px 2px #45C3B5, 2px 1px 2px #433799;
 }
 
 h2
