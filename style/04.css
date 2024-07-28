@@ -73,6 +73,7 @@ font-weight: 100;
     
        .time {
             font-size: 24px;
+            font-weight: bold;
     color: var(--color1);
    -webkit-text-fill-color: transparent;
    animation: rainbow 10s ease infinite;
@@ -93,6 +94,9 @@ max-width: 1024px;
             flex: 1 1 calc(50% - 20px);
             box-sizing: border-box;
             text-align: center;
+            font-weight: bold;
+            font-size: 24px;
+            text-shadow: -2px -1px 2px #FFFFFF, 2px 1px 2px #000000;
             
         }
 
