@@ -70,6 +70,7 @@ box-sizing: border-box;
    line-height: 250%;
     background-size: 400% 400%;
     animation: rainbow 5s ease infinite;
+          text-decoration: none;
    }
 
 .entbutton {
