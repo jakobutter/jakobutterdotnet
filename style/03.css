@@ -74,6 +74,10 @@ box-sizing: border-box;
           text-decoration: none;
    }
 
+.abutton:hover {
+  border-color: white; 
+   }
+
 .entbutton {
     font-size: 32px;
     color: #000000;
