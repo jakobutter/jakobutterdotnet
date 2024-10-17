@@ -220,7 +220,7 @@ max-width: 1024px;
         }
 
 .title {
-font-size:32px; color: var(--color1); text-decoration: underline
+font-size:48px; color: var(--color1); text-decoration: underline
         }
 
 .title:visited {
