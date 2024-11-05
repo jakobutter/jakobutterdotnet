@@ -5,17 +5,18 @@
     --color3: #F0FF4C;
     --color4: #a1f4c3;
     --hovercolor: #ffffff;
-    --deffont: pokemon;
+    --deffont: Arial Narrow;
 }
 
 body {
- background-color:#FF2000;
+ background-color:#FF001F;
  height: 100%;
  color: var(--color1);
  font-family: var(--deffont);
  font-weight: bold;
  font-smooth: never;
 -webkit-font-smoothing : none;
+        transform: scaleX(0.75);
 }
 
 @font-face { font-family: Chicago; src: url('Chicago.ttf'); } 
