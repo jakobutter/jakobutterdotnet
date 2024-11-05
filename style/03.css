@@ -251,7 +251,7 @@ a[href="https://music.apple.com/us/artist/yung-ulcer/1725588092"] {background-im
          100% {background-position:0% 100%}
       }
 
-button {
+.pbutton {
     border: none;
     color: white;
     width: 50px;
