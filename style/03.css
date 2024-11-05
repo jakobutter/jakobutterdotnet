@@ -5,7 +5,7 @@
     --color3: #F0FF4C;
     --color4: #a1f4c3;
     --hovercolor: #ffffff;
-    --deffont: Arial Narrow;
+    --deffont: 'Arial Narrow', Arial, sans-serif; font-stretch: condensed;
 }
 
 body {
@@ -16,7 +16,7 @@ body {
  font-weight: bold;
  font-smooth: never;
 -webkit-font-smoothing : none;
-        transform: scaleX(0.75);
+        transform: scaleX(0.85);
 }
 
 @font-face { font-family: Chicago; src: url('Chicago.ttf'); } 
