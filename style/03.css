@@ -289,3 +289,11 @@ button:active {
     width: 0%;
     background-color: #FFFFFF;
 }
+
+.releasebar {
+    background-color: #FF001F;
+}
+
+.releasebar div {
+    background-color: #000000;
+}
