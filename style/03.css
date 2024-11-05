@@ -251,7 +251,7 @@ a[href="https://music.apple.com/us/artist/yung-ulcer/1725588092"] {background-im
          100% {background-position:0% 100%}
       }
 
-.pbutton {
+button {
     border: none;
     color: white;
     width: 50px;
@@ -282,10 +282,10 @@ button:active {
 #progressBar {
     width: 100%;
     height: 20px;
-    background-color: #--color1;
+    background-color: #FFFFFF;
 }
 #progressBar div {
     height: 100%;
     width: 0%;
-    background-color: #--color2;
+    background-color: #FFFFFF;
 }
