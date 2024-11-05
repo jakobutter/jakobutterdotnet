@@ -1,9 +1,10 @@
 
 :root {
-    --color1: #000000;
-    --color2: #FF001F;
-    --color3: #F0FF4C;
-    --color4: #a1f4c3;
+    --color1: #000000; <!--text color-->
+    --color2: #FF001F; <!--background color-->
+    --color3: #000000; <!#foffac>
+    --color4: #000000; <!#a1f4c3>
+    --color4: #000000; <!#ff0073>
     --hovercolor: #ffffff;
     --deffont: 'Arial Narrow', Arial, sans-serif; font-stretch: condensed;
 }
@@ -282,18 +283,10 @@ button:active {
 #progressBar {
     width: 100%;
     height: 20px;
-    background-color: #FFFFFF;
+    background-color: var(--color2);
 }
 #progressBar div {
     height: 100%;
     width: 0%;
-    background-color: #FFFFFF;
-}
-
-.releasebar {
-    background-color: #FF001F;
-}
-
-.releasebar div {
-    background-color: #000000;
+    background-color: var(--color1);;
 }
