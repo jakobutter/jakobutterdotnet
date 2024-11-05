@@ -16,7 +16,6 @@ body {
  font-weight: bold;
  font-smooth: never;
 -webkit-font-smoothing : none;
-        transform: scaleX(0.85);
 }
 
 @font-face { font-family: Chicago; src: url('Chicago.ttf'); } 
