@@ -1,6 +1,6 @@
 
 :root {
-    --color1: #FFFFFF;
+    --color1: #000000;
     --color2: #FF0073;
     --color3: #F0FF4C;
     --color4: #a1f4c3;
@@ -9,7 +9,7 @@
 }
 
 body {
- background-color:black;
+ background-color:#FF2000;
  height: 100%;
  color: var(--color1);
  font-family: var(--deffont);
