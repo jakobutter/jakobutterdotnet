@@ -1,7 +1,7 @@
 
 :root {
     --color1: #000000;
-    --color2: #FF0073;
+    --color2: #FF001F;
     --color3: #F0FF4C;
     --color4: #a1f4c3;
     --hovercolor: #ffffff;
@@ -251,3 +251,42 @@ a[href="https://music.apple.com/us/artist/yung-ulcer/1725588092"] {background-im
          50%{background-position:100% 0%}
          100% {background-position:0% 100%}
       }
+
+button {
+    border: none;
+    color: white;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: black;
+}
+button:active {
+    background-color: white;
+}
+
+button:active {
+    background-color: white;
+}
+
+.song {
+    cursor: pointer;
+}
+.song.playing {
+    font-weight: bold;
+}
+#progressBar {
+    width: 100%;
+    height: 20px;
+    background-color: #--color1;
+}
+#progressBar div {
+    height: 100%;
+    width: 0%;
+    background-color: #--color2;
+}
