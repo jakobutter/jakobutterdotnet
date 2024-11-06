@@ -3,10 +3,10 @@
     --color1: #000000; /*text color*/
     --color2: #FF0040; /*background color, formerly #FF001F*/
     --color3: #000000; /*#foffac*/
-    --color4: #000000; /*#a1f4c3* hehe lol/
+    --color4: #000000; /*#a1f4c3*/
     --color4: #000000; /*#ff0073*/
     --color5: #000000; /*#ff0000*/
-    --deffont: 'Arial Narrow', Arial, sans-serif; 
+    --deffont: Arial
 }
 
 body {
