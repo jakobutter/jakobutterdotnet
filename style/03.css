@@ -6,17 +6,15 @@
     --color4: #000000; /*#a1f4c3*/
     --color4: #000000; /*#ff0073*/
     --color5: #000000; /*#ff0000*/
-    --deffont: 'Arial Narrow', Arial, sans-serif; font-stretch: condensed;
+    --deffont: 'Arial Narrow', Arial, sans-serif; 
 }
 
 body {
  background-color: var(--color2);
- height: 100%;
  color: var(--color1);
  font-family: var(--deffont);
- font-weight: bold;
- font-smooth: never;
--webkit-font-smoothing : none;
+ font-weight: light;
+ font-width: 50%;
 }
 
 @font-face { font-family: Chicago; src: url('Chicago.ttf'); } 
@@ -56,6 +54,7 @@ img {
   background-color: var(--color1);
  /*   border-width: 2px; */
   border-style: solid; 
+  margin:10px;
 padding: 10px;
 padding-top: 4px;
 padding-bottom: 4px;
