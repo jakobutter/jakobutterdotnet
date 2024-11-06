@@ -1,12 +1,12 @@
 
 :root {
     --color1: #000000; <!--text color-->
-    --color2: #FF001F; <!--background color-->
+    --color2: #FF0040; <!--background color--> /*formerly #FF001F*/
     --color3: #000000; <!--#foffac-->
     --color4: #000000; <!--#a1f4c3-->
     --color4: #000000; <!--#ff0073-->
     --color5: #000000; <!--#ff0000-->
-    --hovercolor: #ffffff;
+    --hovercolor: #000000;
     --deffont: 'Arial Narrow', Arial, sans-serif; font-stretch: condensed;
 }
 
@@ -57,9 +57,9 @@ img {
     }
     
 .abutton {
-  color: #000000;
+  color: var(--color2);
   background-color: var(--color1);
-    border-width: 2px; 
+ /*   border-width: 2px; */
   border-style: solid; 
   border-color: black; 
 padding: 15px;
@@ -75,7 +75,10 @@ box-sizing: border-box;
    }
 
 .abutton:hover {
-  border-color: white; 
+      color: var(--color1);
+  background-color: var(--color2);
+  border-color: var(--hovercolor); 
+border-width: 2px;
    }
 
 .entbutton {
@@ -89,16 +92,6 @@ box-sizing: border-box;
       animation: rainbow 5s ease infinite;
 background-image: linear-gradient(180deg, var(--maincolor), #FFFFFF);
     }
-  
-.entbuttonoffl {
-    font-size: 32px;
-    color: #000000;
-      padding: 1em;
-      padding-top: 0.75em;
-      padding-bottom: 0.75em;
-      background-size: 400% 400%;
-background-color: #808080;
-    }
 
 a:visited {
   color: #000000;
@@ -109,13 +102,6 @@ a:hover {
   color: #000000;
   background-color: var(--hovercolor);
   }
-
-h1[href]
-{
-    text-decoration:underline;
-    background-color:none;
-    color: var(--color1);
-}
 
 h2
 {
@@ -130,9 +116,9 @@ font-weight: 100;
 }
     
 button {
-  color: #000000;
-  background-color: var(--color1);
-    border-width: 1px;
+  color: var(--color1);
+  background-color: var(--color2);
+   /* border-width: 1px;*/
   width: 18px;
     height: 18px;
   font-size: 0px;
@@ -236,7 +222,7 @@ var(--color1);
   }
 
 a[href="https://www.jakobutter.net"] {color: var(--color1); text-decoration: underline);}
-a[href="/releases"] {background-image: linear-gradient(45deg, #FFC7EE, #FFF0FA);}
+/*a[href="/releases"] {background-image: linear-gradient(45deg, #FFC7EE, #FFF0FA);}
 a[href="/gallery"] {background-image: linear-gradient(45deg, #FFE0BF, #FF7070);}
 a[href="/entries"] {background-image: linear-gradient(45deg, #E6D0FF, #AE6AFF);}
 a[href="/contact"] {background-image: linear-gradient(45deg, #F0FF4C, #A1F4C3);}
@@ -245,7 +231,7 @@ a[href="https://yungulcer.bandcamp.com"] {background-image: linear-gradient(45de
 a[href="https://www.soundcloud.com/jakobutter"] {background-image: linear-gradient(45deg, #FF4600, #FFC560); color:white; text-shadow: 1px 1px black;}
 a[href="https://open.spotify.com/artist/4gG6PkE4Pa3gaqCA0Ms0Zf"] {background-image: linear-gradient(45deg, #24E484, #00B85C); color:white; text-shadow: 1px 1px black;}
 a[href="https://x.com/pinksisser"] {background-image: linear-gradient(45deg, #2FDEFF, #2DB0C9); color:white; text-shadow: 1px 1px black;}
-a[href="https://music.apple.com/us/artist/yung-ulcer/1725588092"] {background-image: linear-gradient(45deg, #FA203A, #FC5E76); color:white; text-shadow: 1px 1px black;}
+a[href="https://music.apple.com/us/artist/yung-ulcer/1725588092"] {background-image: linear-gradient(45deg, #FA203A, #FC5E76); color:white; text-shadow: 1px 1px black;}*/
 
 @keyframes rainbow {
          0% {background-position:0% 100%}
@@ -291,3 +277,4 @@ button:active {
     width: 0%;
     background-color: var(--color1);;
 }
+
