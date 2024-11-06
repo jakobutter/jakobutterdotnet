@@ -88,8 +88,8 @@ a:visited {
   }
 
 a:hover {
-  color: #000000;
-  background-color: var(--hovercolor);
+  color: var(--color1);
+  background-color: var(--color2);
   }
 
 h1 {text-decoration: underline;}
