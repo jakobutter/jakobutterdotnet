@@ -7,6 +7,34 @@
         const playlistItems = document.querySelectorAll('#playlist li');
         let currentSongIndex = 0;
 
+navigator.mediaSession.setActionHandler("play", () => {
+    /* Code excerpted. */
+  });
+  navigator.mediaSession.setActionHandler("pause", () => {
+    /* Code excerpted. */
+  });
+  navigator.mediaSession.setActionHandler("stop", () => {
+    /* Code excerpted. */
+  });
+  navigator.mediaSession.setActionHandler("seekbackward", () => {
+    /* Code excerpted. */
+  });
+  navigator.mediaSession.setActionHandler("seekforward", () => {
+    /* Code excerpted. */
+  });
+  navigator.mediaSession.setActionHandler("seekto", () => {
+    /* Code excerpted. */
+  });
+  navigator.mediaSession.setActionHandler("previoustrack", () => {
+    /* Code excerpted. */
+  });
+  navigator.mediaSession.setActionHandler("nexttrack", () => {
+    /* Code excerpted. */
+  });
+  navigator.mediaSession.setActionHandler("skipad", () => {
+    /* Code excerpted. */
+  });
+
         audio.addEventListener('loadedmetadata', () => {
             updateProgress();
         });
