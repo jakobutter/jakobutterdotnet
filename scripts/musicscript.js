@@ -9,7 +9,7 @@ var pageArtwork = document.getElementById('pageArtwork'); // Select the image el
 window.onload = function() {
     audioPlayer.src = songs[0].file;
     updateSongList();
-
+    
 if ('mediaSession' in navigator) {
     navigator.mediaSession.metadata = new MediaMetadata({
         title: songs[0].name,
