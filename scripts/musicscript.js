@@ -8,7 +8,24 @@ var pageArtwork = document.getElementById('pageArtwork'); // Select the image el
 
 window.onload = function() {
     audioPlayer.src = songs[0].file;
-    updateSongList(); // Move this line inside window.onload
+    updateSongList();
+
+    if ('mediaSession' in navigator) {
+        navigator.mediaSession.metadata = new MediaMetadata({
+            title: songs[0].name,
+            artist: songs[0].artist || 'Yung Ulcer',
+            album: songs[0].album || 'Unknown Album',
+            artwork: [
+                { src: pageArtwork.src, sizes: '512x512', type: 'image/jpeg' }
+            ]
+        });
+        navigator.mediaSession.setActionHandler('play', playPause);
+        navigator.mediaSession.setActionHandler('pause', playPause);
+        navigator.mediaSession.setActionHandler('previoustrack', prevSong);
+        navigator.mediaSession.setActionHandler('nexttrack', nextSong);
+    }
+
+    playSong();
 };
 
 audioPlayer.onended = function() {
