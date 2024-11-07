@@ -52,8 +52,6 @@ function prevSong() {
 
 function playSong() {
     audioPlayer.src = songs[songIndex].file;
-    audioPlayer.play();
-    playPauseButton.innerText = '⏸︎';
     document.title = songs[songIndex].name; // Update the document title
     updateSongList();
 
@@ -71,6 +69,9 @@ function playSong() {
         navigator.mediaSession.setActionHandler('previoustrack', prevSong);
         navigator.mediaSession.setActionHandler('nexttrack', nextSong);
     }
+
+    audioPlayer.play();
+    playPauseButton.innerText = '⏸︎';
 }
 
 function updateSongList() {
