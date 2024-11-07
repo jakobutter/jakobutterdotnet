@@ -1,71 +1,78 @@
-<script>
-var songIndex = -1;
+// Define the songs array
+var songs = [
+    { name: 'back to the sticks', file: 'https://www.jakobutter.net/arkive/backtothesticks.mp3', artist: 'Yung Ulcer', album: 'back to the sticks' }
+];
+
+var currentSongIndex = 0;
 var audioPlayer = document.getElementById('player');
-var songList = document.getElementById('songList');
 var playPauseButton = document.getElementById('playPauseButton');
-var progressBar = document.getElementById('progressBar');
+var progressBar = document.getElementById('progressBar').firstElementChild;
 var timeDisplay = document.getElementById('timeDisplay');
 
-window.onload = function() {
-    loadSong(0);
-};
-
-audioPlayer.onended = nextSong;
-audioPlayer.ontimeupdate = updateProgress;
-
+// Load the current song
 function loadSong(index) {
-    songIndex = index;
-    audioPlayer.src = songs[songIndex].file;
-    updateSongList();
+    audioPlayer.src = songs[index].file;
+    audioPlayer.load();
     updateMediaSession();
-    playSong();
 }
 
+// Play or pause the audio
 function playPause() {
-    audioPlayer.paused ? audioPlayer.play() : audioPlayer.pause();
-    playPauseButton.innerText = audioPlayer.paused ? '⏵︎' : '⏸︎';
+    if (audioPlayer.paused) {
+        audioPlayer.play();
+        playPauseButton.textContent = '❚❚'; // Change button to pause icon
+    } else {
+        audioPlayer.pause();
+        playPauseButton.textContent = '▶'; // Change button to play icon
+    }
 }
 
-function nextSong() {
-    songIndex = (songIndex + 1) % songs.length;
-    loadSong(songIndex);
-}
-
-function prevSong() {
-    songIndex = (songIndex - 1 + songs.length) % songs.length;
-    loadSong(songIndex);
-}
-
-function updateProgress() {
-    var progress = (audioPlayer.currentTime / audioPlayer.duration) * 100 + '%';
-    progressBar.children[0].style.width = progress;
-    updateTimeDisplay();
-}
-
-function updateTimeDisplay() {
-    var currentMinutes = Math.floor(audioPlayer.currentTime / 60);
-    var currentSeconds = Math.floor(audioPlayer.currentTime % 60);
-    var durationMinutes = Math.floor(audioPlayer.duration / 60);
-    var durationSeconds = Math.floor(audioPlayer.duration % 60);
-    timeDisplay.innerText = `${currentMinutes}:${currentSeconds < 10 ? '0' : ''}${currentSeconds} / ${durationMinutes}:${durationSeconds < 10 ? '0' : ''}${durationSeconds}`;
-}
-
-function updateSongList() {
-    songList.innerHTML = songs.map((song, index) => 
-        `<div class="song${index === songIndex ? ' playing' : ''}" onclick="loadSong(${index})">${song.name}</div>`
-    ).join('');
-}
-
+// Update the Media Session metadata
 function updateMediaSession() {
     if ('mediaSession' in navigator) {
         navigator.mediaSession.metadata = new MediaMetadata({
-            title: songs[songIndex].name,
-            artist: songs[songIndex].artist || 'Unknown Artist',
-            album: songs[songIndex].album || 'Unknown Album',
-            artwork: [{ src: 'artwork.jpg', sizes: '512x512', type: 'image/jpeg' }]
+            title: songs[currentSongIndex].name,
+            artist: songs[currentSongIndex].artist,
+            album: songs[currentSongIndex].album,
+            artwork: [
+                { src: 'path/to/artwork.jpg', sizes: '96x96', type: 'image/jpg' }
+            ]
         });
     }
 }
 
-updateSongList();
-</script>
+// Scrub through the audio
+function scrub(event) {
+    const scrubTime = (event.offsetX / progressBar.parentElement.offsetWidth) * audioPlayer.duration;
+    audioPlayer.currentTime = scrubTime;
+}
+
+// Update progress bar and time display
+audioPlayer.addEventListener('timeupdate', () => {
+    const progressPercent = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+    progressBar.style.width = progressPercent + '%';
+    timeDisplay.textContent = formatTime(audioPlayer.currentTime) + ' / ' + formatTime(audioPlayer.duration);
+});
+
+// Format time in minutes and seconds
+function formatTime(seconds) {
+    const minutes = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+    return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
+}
+
+// Previous and Next song functionality
+function previousSong() {
+    currentSongIndex = (currentSongIndex > 0) ? currentSongIndex - 1 : songs.length - 1;
+    loadSong(currentSongIndex);
+    playPause();
+}
+
+function nextSong() {
+    currentSongIndex = (currentSongIndex < songs.length - 1) ? currentSongIndex + 1 : 0;
+    loadSong(currentSongIndex);
+    playPause();
+}
+
+// Initialize the player
+loadSong(currentSongIndex);
