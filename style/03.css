@@ -2,7 +2,7 @@
 :root {
     --color1: #000000; /*text color*/
     --color2: #FF0040; /*background color, formerly #FF001F*/
-    --color3: #000000; /*#foffac*/
+    --color3: #foffac; /*#foffac*/
     --color4: #000000; /*#a1f4c3*/
     --color4: #000000; /*#ff0073*/
     --color5: #000000; /*#ff0000*/
@@ -266,5 +266,56 @@ button:active {
 #progressBar div {
     height: 100%;
     width: 0%;
-    background-color: var(--color1);;
+    background-color: var(--color1);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+}
+
+.body__inner-wrapper {
+  height: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.marquee {
+  width: 100%;
+  pointer-events: none;
+    background-color: var(--color1);
+  overflow: hidden;
+}
+
+.marquee__inner-wrap {
+  height: 100%;
+  width: 100%;
+}
+
+.marquee span {
+  text-align: center;
+    color: var(--color2);
+   font-weight: bold;
+  white-space: nowrap;
+}
+
+
+.marquee__inner {
+  height: 100%;
+  width: fit-content;
+  align-items: center;
+  display: flex;
+  position: relative;
+  animation: marquee 16s linear infinite;
+  will-change: transform;
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
 }
