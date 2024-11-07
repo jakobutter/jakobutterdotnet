@@ -6,7 +6,10 @@ var progressBar = document.getElementById('progressBar');
 var timeDisplay = document.getElementById('timeDisplay');
 var pageArtwork = document.getElementById('pageArtwork'); // Select the image element
 
-
+window.onload = function() {
+    audioPlayer.src = songs[0].file;
+    updateSongList(); // Move this line inside window.onload
+};
 
 audioPlayer.onended = function() {
    nextSong();
@@ -19,7 +22,10 @@ audioPlayer.ontimeupdate = function() {
 };
 
 function playPause() {
-    if (audioPlayer.paused) {
+    if (songIndex === -1) { // Check if songIndex is -1, meaning no song is currently selected
+        songIndex = 0; // Set songIndex to 0, which corresponds to the first song in songList
+        playSong(); // Play the first song
+    } else if (audioPlayer.paused) {
         audioPlayer.play();
         playPauseButton.innerText = '⏸︎';
     } else {
