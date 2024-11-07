@@ -1,96 +1,68 @@
-var songIndex = 0;
-var audioPlayer = document.getElementById('player');
-var songList = document.getElementById('songList');
-var playPauseButton = document.getElementById('playPauseButton');
-var progressBar = document.getElementById('progressBar');
-var timeDisplay = document.getElementById('timeDisplay');
-var pageArtwork = document.getElementById('pageArtwork'); // Select the image element
+        const audio = document.getElementById('audio');
+        const playPauseButton = document.getElementById('playPause');
+        const prevButton = document.getElementById('prev');
+        const nextButton = document.getElementById('next');
+        const progressBar = document.getElementById('progress').firstElementChild;
+        const timeDisplay = document.getElementById('time');
+        const playlistItems = document.querySelectorAll('#playlist li');
+        let currentSongIndex = 0;
 
-audioPlayer.onended = function() {
-   nextSong();
-};
-
-audioPlayer.addEventListener('timeupdate', () => {
-    const progressPercent = (audioPlayer.currentTime / audioPlayer.duration) * 100;
-    progressBar.style.width = progressPercent + '%';
-    timeDisplay.textContent = formatTime(audioPlayer.currentTime) + ' / ' + formatTime(audioPlayer.duration);
-});
-
-function playPause() {
-    if (audioPlayer.paused) {
-        audioPlayer.play();
-        playPauseButton.innerText = '⏸︎';
-    } else {
-        audioPlayer.pause();
-        playPauseButton.innerText = '⏵︎';
-    }
-}
-
-function nextSong() {
-    songIndex++;
-    if (songIndex > songs.length - 1) {
-        songIndex = 0;
-    }
-    playSong();
-}
-
-function prevSong() {
-    songIndex--;
-    if (songIndex < 0) {
-        songIndex = songs.length - 1;
-    }
-    playSong();
-}
-
-function playSong() {
-    audioPlayer.src = songs[songIndex].file;
-    audioPlayer.play();
-    playPauseButton.innerText = '⏸︎';
-    document.title = songs[songIndex].name; // Update the document title
-    updateSongList();
-
-    if ('mediaSession' in navigator) {
-        navigator.mediaSession.metadata = new MediaMetadata({
-            title: songs[songIndex].name,
-            artist: songs[songIndex].artist || 'Yung Ulcer',
-            album: songs[songIndex].album || 'Unknown Album',
-            artwork: [
-                { src: pageArtwork.src, sizes: '512x512', type: 'image/jpeg' }
-            ]
+        audio.addEventListener('loadedmetadata', () => {
+            updateProgress();
         });
-        navigator.mediaSession.setActionHandler('play', playPause);
-        navigator.mediaSession.setActionHandler('pause', playPause);
-        navigator.mediaSession.setActionHandler('previoustrack', prevSong);
-        navigator.mediaSession.setActionHandler('nexttrack', nextSong);
-    }
-}
 
-function updateSongList() {
-   songList.innerHTML = songs.map(function(song, index) {
-       return '<div class="song' + (index === songIndex ? ' playing' : '') + '" onclick="selectSong(' + index + ')">' + song.name + '</div>';
-   }).join('');
-}
+        audio.addEventListener('timeupdate', () => {
+            updateProgress();
+        });
 
-function selectSong(index) {
-   songIndex = index;
-   playSong();
-}
+        playPauseButton.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
+                playPauseButton.textContent = '⏸︎';
+            } else {
+                audio.pause();
+                playPauseButton.textContent = '▶';
+            }
+        });
 
-function scrub(event) {
-   var x = event.offsetX / progressBar.offsetWidth * audioPlayer.duration; 
-   audioPlayer.currentTime = x; 
-}
+        prevButton.addEventListener('click', () => {
+            currentSongIndex = (currentSongIndex - 1 + playlistItems.length) % playlistItems.length;
+            loadSong();
+        });
 
-function updateTimeDisplay() {
-    var currentMinutes = Math.floor(audioPlayer.currentTime / 60);
-    var currentSeconds = Math.floor(audioPlayer.currentTime % 60);
-    var durationMinutes = Math.floor(audioPlayer.duration / 60);
-    var durationSeconds = Math.floor(audioPlayer.duration % 60);
+        nextButton.addEventListener('click', () => {
+            currentSongIndex = (currentSongIndex + 1) % playlistItems.length;
+            loadSong();
+        });
 
-    if (currentSeconds < 10) currentSeconds = '0' + currentSeconds;
-    if (durationSeconds < 10) durationSeconds = '0' + durationSeconds;
+        function loadSong() {
+            audio.src = playlistItems[currentSongIndex].textContent.toLowerCase().replace(' ', '') + '.mp3';
+            audio.play();
+            playPauseButton.textContent = '⏸︎';
+            highlightCurrentSong();
+        }
 
-    timeDisplay.innerText = currentMinutes + ':' + currentSeconds + ' / ' + durationMinutes + ':' + durationSeconds;
-}
+        function highlightCurrentSong() {
+            playlistItems.forEach((item, index) => {
+                item.classList.toggle('active', index === currentSongIndex);
+            });
+        }
 
-updateSongList();
+        function updateProgress() {
+            const progress = (audio.currentTime / audio.duration) * 100;
+            progressBar.style.width = progress + '%';
+            timeDisplay.textContent = formatTime(audio.currentTime) + ' / ' + formatTime(audio.duration);
+        }
+
+        function setProgress(event) {
+            const totalWidth = event.currentTarget.clientWidth;
+            const clickX = event.offsetX;
+            const newTime = (clickX / totalWidth) * audio.duration;
+            audio.currentTime = newTime;
+        }
+
+        function formatTime(seconds) {
+            const minutes = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
+        }
