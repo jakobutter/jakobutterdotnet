@@ -1,46 +1,47 @@
+<script>
 var songIndex = -1;
 var audioPlayer = document.getElementById('player');
 var songList = document.getElementById('songList');
 var playPauseButton = document.getElementById('playPauseButton');
 var progressBar = document.getElementById('progressBar');
 var timeDisplay = document.getElementById('timeDisplay');
-var pageArtwork = document.getElementById('pageArtwork'); // Select the image element
+var pageArtwork = document.getElementById('pageArtwork');
 
 window.onload = function() {
     audioPlayer.src = songs[0].file;
     updateSongList();
     
-if ('mediaSession' in navigator) {
-    navigator.mediaSession.metadata = new MediaMetadata({
-        title: songs[0].name,
-        artist: songs[0].artist || 'Yung Ulcer',
-        album: songs[0].album || 'Unknown Album',
-        artwork: [
-            { src: pageArtwork.src, sizes: '512x512', type: 'image/jpeg' }
-        ]
-    });
-    console.log('MediaSession metadata set:', navigator.mediaSession.metadata);
-}
-        navigator.mediaSession.setActionHandler('play', playPause);
-        navigator.mediaSession.setActionHandler('pause', playPause);
-        navigator.mediaSession.setActionHandler('previoustrack', prevSong);
-        navigator.mediaSession.setActionHandler('nexttrack', nextSong);
+    if ('mediaSession' in navigator) {
+        navigator.mediaSession.metadata = new MediaMetadata({
+            title: songs[0].name,
+            artist: songs[0].artist || 'Yung Ulcer',
+            album: songs[0].album || 'Unknown Album',
+            artwork: [
+                { src: pageArtwork.src, sizes: '512x512', type: 'image/jpeg' }
+            ]
+        });
+        console.log('MediaSession metadata set:', navigator.mediaSession.metadata);
     }
+    navigator.mediaSession.setActionHandler('play', playPause);
+    navigator.mediaSession.setActionHandler('pause', playPause);
+    navigator.mediaSession.setActionHandler('previoustrack', prevSong);
+    navigator.mediaSession.setActionHandler('nexttrack', nextSong);
+}
 
 audioPlayer.onended = function() {
-   nextSong();
+    nextSong();
 };
 
 audioPlayer.ontimeupdate = function() {
-   var progress = audioPlayer.currentTime / audioPlayer.duration * 100 + '%';
-   progressBar.children[0].style.width = progress; 
-   updateTimeDisplay();
+    var progress = audioPlayer.currentTime / audioPlayer.duration * 100 + '%';
+    progressBar.children[0].style.width = progress; 
+    updateTimeDisplay();
 };
 
 function playPause() {
-    if (songIndex === -1) { // Check if songIndex is -1, meaning no song is currently selected
-        songIndex = 0; // Set songIndex to 0, which corresponds to the first song in songList
-        playSong(); // Play the first song
+    if (songIndex === -1) {
+        songIndex = 0;
+        playSong();
     } else if (audioPlayer.paused) {
         audioPlayer.play();
         playPauseButton.innerText = '⏸︎';
@@ -68,24 +69,24 @@ function prevSong() {
 
 function playSong() {
     audioPlayer.src = songs[songIndex].file;
-    document.title = songs[songIndex].name; // Update the document title
+    document.title = songs[songIndex].name;
     updateSongList();
 }
 
 function updateSongList() {
-   songList.innerHTML = songs.map(function(song, index) {
-       return '<div class="song' + (index === songIndex ? ' playing' : '') + '" onclick="selectSong(' + index + ')">' + song.name + '</div>';
-   }).join('');
+    songList.innerHTML = songs.map(function(song, index) {
+        return '<div class="song' + (index === songIndex ? ' playing' : '') + '" onclick="selectSong(' + index + ')">' + song.name + '</div>';
+    }).join('');
 }
 
 function selectSong(index) {
-   songIndex = index;
-   playSong();
+    songIndex = index;
+    playSong();
 }
 
 function scrub(event) {
-   var x = event.offsetX / progressBar.offsetWidth * audioPlayer.duration; 
-   audioPlayer.currentTime = x; 
+    var x = event.offsetX / progressBar.offsetWidth * audioPlayer.duration; 
+    audioPlayer.currentTime = x; 
 }
 
 function updateTimeDisplay() {
@@ -101,3 +102,4 @@ function updateTimeDisplay() {
 }
 
 updateSongList();
+</script>
