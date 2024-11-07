@@ -1,78 +1,96 @@
-// Define the songs array
-var songs = [
-    { name: 'back to the sticks', file: 'https://www.jakobutter.net/arkive/backtothesticks.mp3', artist: 'Yung Ulcer', album: 'back to the sticks' }
-];
-
-var currentSongIndex = 0;
+var songIndex = 0;
 var audioPlayer = document.getElementById('player');
+var songList = document.getElementById('songList');
 var playPauseButton = document.getElementById('playPauseButton');
-var progressBar = document.getElementById('progressBar').firstElementChild;
+var progressBar = document.getElementById('progressBar');
 var timeDisplay = document.getElementById('timeDisplay');
+var pageArtwork = document.getElementById('pageArtwork'); // Select the image element
 
-// Load the current song
-function loadSong(index) {
-    audioPlayer.src = songs[index].file;
-    audioPlayer.load();
-    updateMediaSession();
-}
+audioPlayer.onended = function() {
+   nextSong();
+};
 
-
-function playPause() {
-    if (audioPlayer.paused) {
-        audioPlayer.play();
-        playPauseButton.textContent = '❚❚'; // Change button to pause icon
-    } else {
-        audioPlayer.pause();
-        playPauseButton.textContent = '▶'; // Change button to play icon
-    }
-}
-
-// Update the Media Session metadata
-function updateMediaSession() {
-    if ('mediaSession' in navigator) {
-        navigator.mediaSession.metadata = new MediaMetadata({
-            title: songs[currentSongIndex].name,
-            artist: songs[currentSongIndex].artist,
-            album: songs[currentSongIndex].album,
-            artwork: [
-                { src: 'path/to/artwork.jpg', sizes: '96x96', type: 'image/jpg' }
-            ]
-        });
-    }
-}
-
-// Scrub through the audio
-function scrub(event) {
-    const scrubTime = (event.offsetX / progressBar.parentElement.offsetWidth) * audioPlayer.duration;
-    audioPlayer.currentTime = scrubTime;
-}
-
-// Update progress bar and time display
 audioPlayer.addEventListener('timeupdate', () => {
     const progressPercent = (audioPlayer.currentTime / audioPlayer.duration) * 100;
     progressBar.style.width = progressPercent + '%';
     timeDisplay.textContent = formatTime(audioPlayer.currentTime) + ' / ' + formatTime(audioPlayer.duration);
 });
 
-// Format time in minutes and seconds
-function formatTime(seconds) {
-    const minutes = Math.floor(seconds / 60);
-    const secs = Math.floor(seconds % 60);
-    return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
-}
-
-// Previous and Next song functionality
-function previousSong() {
-    currentSongIndex = (currentSongIndex > 0) ? currentSongIndex - 1 : songs.length - 1;
-    loadSong(currentSongIndex);
-    playPause();
+function playPause() {
+    if (audioPlayer.paused) {
+        audioPlayer.play();
+        playPauseButton.innerText = '⏸︎';
+    } else {
+        audioPlayer.pause();
+        playPauseButton.innerText = '⏵︎';
+    }
 }
 
 function nextSong() {
-    currentSongIndex = (currentSongIndex < songs.length - 1) ? currentSongIndex + 1 : 0;
-    loadSong(currentSongIndex);
-    playPause();
+    songIndex++;
+    if (songIndex > songs.length - 1) {
+        songIndex = 0;
+    }
+    playSong();
 }
 
-// Initialize the player
-loadSong(currentSongIndex);
+function prevSong() {
+    songIndex--;
+    if (songIndex < 0) {
+        songIndex = songs.length - 1;
+    }
+    playSong();
+}
+
+function playSong() {
+    audioPlayer.src = songs[songIndex].file;
+    audioPlayer.play();
+    playPauseButton.innerText = '⏸︎';
+    document.title = songs[songIndex].name; // Update the document title
+    updateSongList();
+
+    if ('mediaSession' in navigator) {
+        navigator.mediaSession.metadata = new MediaMetadata({
+            title: songs[songIndex].name,
+            artist: songs[songIndex].artist || 'Yung Ulcer',
+            album: songs[songIndex].album || 'Unknown Album',
+            artwork: [
+                { src: pageArtwork.src, sizes: '512x512', type: 'image/jpeg' }
+            ]
+        });
+        navigator.mediaSession.setActionHandler('play', playPause);
+        navigator.mediaSession.setActionHandler('pause', playPause);
+        navigator.mediaSession.setActionHandler('previoustrack', prevSong);
+        navigator.mediaSession.setActionHandler('nexttrack', nextSong);
+    }
+}
+
+function updateSongList() {
+   songList.innerHTML = songs.map(function(song, index) {
+       return '<div class="song' + (index === songIndex ? ' playing' : '') + '" onclick="selectSong(' + index + ')">' + song.name + '</div>';
+   }).join('');
+}
+
+function selectSong(index) {
+   songIndex = index;
+   playSong();
+}
+
+function scrub(event) {
+   var x = event.offsetX / progressBar.offsetWidth * audioPlayer.duration; 
+   audioPlayer.currentTime = x; 
+}
+
+function updateTimeDisplay() {
+    var currentMinutes = Math.floor(audioPlayer.currentTime / 60);
+    var currentSeconds = Math.floor(audioPlayer.currentTime % 60);
+    var durationMinutes = Math.floor(audioPlayer.duration / 60);
+    var durationSeconds = Math.floor(audioPlayer.duration % 60);
+
+    if (currentSeconds < 10) currentSeconds = '0' + currentSeconds;
+    if (durationSeconds < 10) durationSeconds = '0' + durationSeconds;
+
+    timeDisplay.innerText = currentMinutes + ':' + currentSeconds + ' / ' + durationMinutes + ':' + durationSeconds;
+}
+
+updateSongList();
