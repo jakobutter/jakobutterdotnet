@@ -10,23 +10,22 @@ window.onload = function() {
     audioPlayer.src = songs[0].file;
     updateSongList();
 
-    if ('mediaSession' in navigator) {
-        navigator.mediaSession.metadata = new MediaMetadata({
-            title: songs[0].name,
-            artist: songs[0].artist || 'Yung Ulcer',
-            album: songs[0].album || 'Unknown Album',
-            artwork: [
-                { src: pageArtwork.src, sizes: '512x512', type: 'image/jpeg' }
-            ]
-        });
+if ('mediaSession' in navigator) {
+    navigator.mediaSession.metadata = new MediaMetadata({
+        title: songs[0].name,
+        artist: songs[0].artist || 'Yung Ulcer',
+        album: songs[0].album || 'Unknown Album',
+        artwork: [
+            { src: pageArtwork.src, sizes: '512x512', type: 'image/jpeg' }
+        ]
+    });
+    console.log('MediaSession metadata set:', navigator.mediaSession.metadata);
+}
         navigator.mediaSession.setActionHandler('play', playPause);
         navigator.mediaSession.setActionHandler('pause', playPause);
         navigator.mediaSession.setActionHandler('previoustrack', prevSong);
         navigator.mediaSession.setActionHandler('nexttrack', nextSong);
     }
-
-    playSong();
-};
 
 audioPlayer.onended = function() {
    nextSong();
@@ -71,24 +70,6 @@ function playSong() {
     audioPlayer.src = songs[songIndex].file;
     document.title = songs[songIndex].name; // Update the document title
     updateSongList();
-
-    if ('mediaSession' in navigator) {
-        navigator.mediaSession.metadata = new MediaMetadata({
-            title: songs[songIndex].name,
-            artist: songs[songIndex].artist || 'Yung Ulcer',
-            album: songs[songIndex].album || 'Unknown Album',
-            artwork: [
-                { src: pageArtwork.src, sizes: '512x512', type: 'image/jpeg' }
-            ]
-        });
-        navigator.mediaSession.setActionHandler('play', playPause);
-        navigator.mediaSession.setActionHandler('pause', playPause);
-        navigator.mediaSession.setActionHandler('previoustrack', prevSong);
-        navigator.mediaSession.setActionHandler('nexttrack', nextSong);
-    }
-
-    audioPlayer.play();
-    playPauseButton.innerText = '⏸︎';
 }
 
 function updateSongList() {
