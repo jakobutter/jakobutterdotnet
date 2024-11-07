@@ -16,7 +16,7 @@ function loadSong(index) {
     updateMediaSession();
 }
 
-// Play or pause the audio
+
 function playPause() {
     if (audioPlayer.paused) {
         audioPlayer.play();
