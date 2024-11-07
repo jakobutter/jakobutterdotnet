@@ -13,32 +13,35 @@
 
 <body>
     <div align="center">
-        <div class=refbox >
-            <p>
-          <a class="title" href="https://www.jakobutter.net">jakobutter.net</a>
-              <br>
-              <a style="font-size:24px; margin:6px" class=abutton href="/gallery">gallery</a>
-              <a style="font-size:24px; margin:6px" class=abutton href="/entries">entries</a>
-              <a style="font-size:24px; margin:6px" class=abutton href="/contact">contact</a>
-            </p>
-        </div>
-<div style="max-width: 512px;" class=thugdiv >
+<div class=thugdiv>
+<h1 align="left">jakobutter.net</h1>
+          <a class=abutton href="/gallery">gallery</a>
+          <a class=abutton href="/entries">entries</a>
+          <a class=abutton href="/contact">contact</a>
+        </p>
+    </div>
+<div style="max-width: 512px;" class=thugdiv>
 
         <div class="cooldiv"></div>
 <br><br>
-                    <img class="thugimg" src="img/sticks.png" width="256">
+                    <img class="thugimg" id="pageArtwork" src="img/sticks.png" width="256">
+<br>
+<div class=thugdiv style=max-width:320px;>
+<br>
+<audio id="player"></audio>
+<button  id="playPauseButton" onclick="playPause()">▶</button>
 <br><br>
-<audio id="player" src="/arkive/backtothesticks.mp3"></audio>
-<button id="playPauseButton" onclick="playPause()">▶</button>
-<br>
-<br>
-<div style=max-width:320px; align="center" id="progressBar" onclick="scrub(event)"><div></div></div>
-  <br>
+<div id="progressBar" onclick="scrub(event)"><div></div></div>
 <div id="timeDisplay">0:00 / 0:00</div>
-                <br>
-                <br>
-                <br>
-                <br>
+<br> 
+<script>
+var songs = [
+  {name: "back to the sticks", file: "/arkive/backtothesticks.mp3"}
+];
+</script>
+<br>
+<br>
+</div>
             <div class="cooldiv"></div>
             <br>
         <div class="cooldiv" style="background-color: var(--color3)"></div>
