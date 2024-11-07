@@ -1,10 +1,12 @@
-var songIndex = 0;
+var songIndex = -1;
 var audioPlayer = document.getElementById('player');
 var songList = document.getElementById('songList');
 var playPauseButton = document.getElementById('playPauseButton');
 var progressBar = document.getElementById('progressBar');
 var timeDisplay = document.getElementById('timeDisplay');
 var pageArtwork = document.getElementById('pageArtwork'); // Select the image element
+
+
 
 audioPlayer.onended = function() {
    nextSong();
