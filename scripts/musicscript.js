@@ -5,88 +5,41 @@ var songList = document.getElementById('songList');
 var playPauseButton = document.getElementById('playPauseButton');
 var progressBar = document.getElementById('progressBar');
 var timeDisplay = document.getElementById('timeDisplay');
-var pageArtwork = document.getElementById('pageArtwork');
 
 window.onload = function() {
-    audioPlayer.src = songs[0].file;
+    loadSong(0);
+};
+
+audioPlayer.onended = nextSong;
+audioPlayer.ontimeupdate = updateProgress;
+
+function loadSong(index) {
+    songIndex = index;
+    audioPlayer.src = songs[songIndex].file;
     updateSongList();
-    
-    if ('mediaSession' in navigator) {
-        navigator.mediaSession.metadata = new MediaMetadata({
-            title: songs[0].name,
-            artist: songs[0].artist || 'Yung Ulcer',
-            album: songs[0].album || 'Unknown Album',
-            artwork: [
-                { src: pageArtwork.src, sizes: '512x512', type: 'image/jpeg' }
-            ]
-        });
-        console.log('MediaSession metadata set:', navigator.mediaSession.metadata);
-    }
-    navigator.mediaSession.setActionHandler('play', playPause);
-    navigator.mediaSession.setActionHandler('pause', playPause);
-    navigator.mediaSession.setActionHandler('previoustrack', prevSong);
-    navigator.mediaSession.setActionHandler('nexttrack', nextSong);
+    updateMediaSession();
+    playSong();
 }
 
-audioPlayer.onended = function() {
-    nextSong();
-};
-
-audioPlayer.ontimeupdate = function() {
-    var progress = audioPlayer.currentTime / audioPlayer.duration * 100 + '%';
-    progressBar.children[0].style.width = progress; 
-    updateTimeDisplay();
-};
-
 function playPause() {
-    if (songIndex === -1) {
-        songIndex = 0;
-        playSong();
-    } else if (audioPlayer.paused) {
-        audioPlayer.play();
-        playPauseButton.innerText = '⏸︎';
-    } else {
-        audioPlayer.pause();
-        playPauseButton.innerText = '⏵︎';
-    }
+    audioPlayer.paused ? audioPlayer.play() : audioPlayer.pause();
+    playPauseButton.innerText = audioPlayer.paused ? '⏵︎' : '⏸︎';
 }
 
 function nextSong() {
-    songIndex++;
-    if (songIndex > songs.length - 1) {
-        songIndex = 0;
-    }
-    playSong();
+    songIndex = (songIndex + 1) % songs.length;
+    loadSong(songIndex);
 }
 
 function prevSong() {
-    songIndex--;
-    if (songIndex < 0) {
-        songIndex = songs.length - 1;
-    }
-    playSong();
+    songIndex = (songIndex - 1 + songs.length) % songs.length;
+    loadSong(songIndex);
 }
 
-function playSong() {
-    audioPlayer.src = songs[songIndex].file;
-    document.title = songs[songIndex].name;
-    updateSongList();
-}
-
-function updateSongList() {
-    songList.innerHTML = songs.map(function(song, index) {
-        return '<div class="song' + (index === songIndex ? ' playing' : '') + '" onclick="selectSong(' + index + ')">' + song.name + '</div>';
-    }).join('');
-}
-
-function selectSong(index) {
-    songIndex = index;
-    playSong();
-}
-
-function scrub(event) {
-    var x = event.offsetX / progressBar.offsetWidth * audioPlayer.duration; 
-    audioPlayer.currentTime = x; 
+function updateProgress() {
+    var progress = (audioPlayer.currentTime / audioPlayer.duration) * 100 + '%';
+    progressBar.children[0].style.width = progress;
+    updateTimeDisplay();
 }
 
 function updateTimeDisplay() {
@@ -94,11 +47,24 @@ function updateTimeDisplay() {
     var currentSeconds = Math.floor(audioPlayer.currentTime % 60);
     var durationMinutes = Math.floor(audioPlayer.duration / 60);
     var durationSeconds = Math.floor(audioPlayer.duration % 60);
+    timeDisplay.innerText = `${currentMinutes}:${currentSeconds < 10 ? '0' : ''}${currentSeconds} / ${durationMinutes}:${durationSeconds < 10 ? '0' : ''}${durationSeconds}`;
+}
 
-    if (currentSeconds < 10) currentSeconds = '0' + currentSeconds;
-    if (durationSeconds < 10) durationSeconds = '0' + durationSeconds;
+function updateSongList() {
+    songList.innerHTML = songs.map((song, index) => 
+        `<div class="song${index === songIndex ? ' playing' : ''}" onclick="loadSong(${index})">${song.name}</div>`
+    ).join('');
+}
 
-    timeDisplay.innerText = currentMinutes + ':' + currentSeconds + ' / ' + durationMinutes + ':' + durationSeconds;
+function updateMediaSession() {
+    if ('mediaSession' in navigator) {
+        navigator.mediaSession.metadata = new MediaMetadata({
+            title: songs[songIndex].name,
+            artist: songs[songIndex].artist || 'Unknown Artist',
+            album: songs[songIndex].album || 'Unknown Album',
+            artwork: [{ src: 'artwork.jpg', sizes: '512x512', type: 'image/jpeg' }]
+        });
+    }
 }
 
 updateSongList();
