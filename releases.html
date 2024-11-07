@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 <head>
   <title>NEW RELEASES</title>
@@ -21,27 +20,31 @@
     </div>
 <div style="max-width: 512px;" class=thugdiv>
 
-        <div class="cooldiv"></div>
-<br><br>  <div id="songList"></div>
+        <div class="cooldiv"></div><br>
                     <img class="thugimg" id="pageArtwork" src="img/sticks.png" width="256">
-<br>
-<div class=thugdiv style=max-width:320px;>
-<br>
-<audio id="player"></audio>
-  <button id="prevButton" onclick="prevSong()">⏮</button>
-<button  id="playPauseButton" onclick="playPause()">▶</button>
-  <button id="nextButton" onclick="nextSong()">⏭</button>
 <br><br>
-<div id="progressBar" onclick="scrub(event)"><div></div></div>
-<div id="timeDisplay">0:00 / 0:00</div>
-
-<br>
-<br>
-<br>
-</div>
-            <div class="cooldiv"></div>
+     <div>
+        <button id="prev">⏮︎</button>
+        <button id="playPause">▶</button>
+        <button id="next">⏭︎</button>
+    </div>
+  <br> 
+    <div id="progress" onclick="setProgress(event)">
+        <div></div>
+    </div>
+    <div id="time">0:00 / 0:00</div>
+    <audio id="audio" preload="metadata">
+        <source src="https://www.jakobutter.net/arkive/backtothesticks.mp3" type="audio/mpeg">
+        <source src="song2.mp3" type="audio/mpeg">
+        <source src="song3.mp3" type="audio/mpeg">
+    </audio>
+    <ul id="playlist">
+        <li class="active">Song 1</li>
+        <li>Song 2</li>
+        <li>Song 3</li>
+    </ul>
             <br>
-        <div class="cooldiv" style="background-color: var(--color3)"></div>
+        <div class="cooldiv"></div><br>
                 <h2><span style="color: var(--color3)">CTHULU BLACKPILL</span></h2>
                     <img class="thugimg" src="https://i1.sndcdn.com/artworks-36gkPQEW8cQORe5H-I4zySA-original.jpg" alt="YouTube" width="256">
         <br> 
@@ -120,10 +123,5 @@
     <br>
     <a font-size: 6px;>New Paranormal© est. 2004</a>
 </div>
-  <script>
-var songs = [
-    { name: 'back to the sticks', file: 'https://www.jakobutter.net/arkive/backtothesticks.mp3', artist: 'Yung Ulcer', album: 'back to the sticks' }
-];
-</script>
   </body>
 </html>
