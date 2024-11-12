@@ -43,17 +43,21 @@
         }
 
         function updateMediaSession() {
-            if ('mediaSession' in navigator) {
-                navigator.mediaSession.metadata = new MediaMetadata({
-                    title: songs[currentSongIndex].name,
-                    artist: "Yung Ulcer",
-                    album: "Sample Album",
-                    artwork: [
-                        { src: 'img/sticks.png', sizes: '96x96', type: 'image/png' }
-                    ]
-                });
-            }
-        }
+    if ('mediaSession' in navigator) {
+        navigator.mediaSession.metadata = new MediaMetadata({
+            title: songs[songIndex].name,
+            artist: songs[songIndex].artist || 'Yung Ulcer',
+            album: songs[songIndex].album || 'Unknown Album',
+            artwork: [
+                { src: pageArtwork.src, sizes: '512x512', type: 'image/jpeg' }
+            ]
+        });
+        navigator.mediaSession.setActionHandler('play', playPause);
+        navigator.mediaSession.setActionHandler('pause', playPause);
+        navigator.mediaSession.setActionHandler('previoustrack', prevSong);
+        navigator.mediaSession.setActionHandler('nexttrack', nextSong);
+    }
+}
 
         playPauseButton.addEventListener('click', () => {
             isPlaying ? pauseSong() : playSong();
