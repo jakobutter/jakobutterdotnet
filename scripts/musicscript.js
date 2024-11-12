@@ -1,84 +1,86 @@
-        const audio = document.getElementById('audio');
-        const playPauseButton = document.getElementById('playPause');
+        let currentSongIndex = 0;
+        let audio = new Audio(songs[currentSongIndex].file);
+        let isPlaying = false;
+
+        const playPauseButton = document.getElementById('play-pause');
         const prevButton = document.getElementById('prev');
         const nextButton = document.getElementById('next');
-        const progressBar = document.getElementById('progress').firstElementChild;
-        const timeDisplay = document.getElementById('time');
-        const playlistItems = document.querySelectorAll('#playlist li');
-        let currentSongIndex = 0;
-        var pageArtwork = document.getElementById('pageArtwork');
+        const timeDisplay = document.getElementById('time-display');
+        const progressBar = document.getElementById('progress');
+        const scrubBar = document.getElementById('scrub-bar');
+        const trackList = document.getElementById('track-list');
 
-        audio.addEventListener('loadedmetadata', () => {
-            updateProgress();
-        });
-
-        audio.addEventListener('timeupdate', () => {
-            updateProgress();
-        });
-
-        playPauseButton.addEventListener('click', () => {
-            if (audio.paused) {
-                audio.play();
-                playPauseButton.textContent = '⏸︎';
-            } else {
-                audio.pause();
-                playPauseButton.textContent = '▶';
-            }
-        });
-
-        prevButton.addEventListener('click', () => {
-            currentSongIndex = (currentSongIndex - 1 + playlistItems.length) % playlistItems.length;
-            loadSong();
-        });
-
-        nextButton.addEventListener('click', () => {
-            currentSongIndex = (currentSongIndex + 1) % playlistItems.length;
-            loadSong();
-        });
-
-        function loadSong() {
-            audio.src = playlistItems[currentSongIndex].textContent.toLowerCase().replace(' ', '') + '.mp3';
-            audio.play();
-            playPauseButton.textContent = '⏸︎';
-            highlightCurrentSong();
-            
-            if ('mediaSession' in navigator) {
-        navigator.mediaSession.metadata = new MediaMetadata({
-            title: songs[currentSongIndex].name,
-            artist: songs[currentSongIndex].artist || 'Yung Ulcer',
-            album: songs[currentSongIndex].album || 'Unknown Album',
-            artwork: [
-                { src: pageArtwork.src, sizes: '512x512', type: 'image/jpeg' }
-            ]
-        });
-        navigator.mediaSession.setActionHandler('play', playPause);
-        navigator.mediaSession.setActionHandler('pause', playPause);
-        navigator.mediaSession.setActionHandler('previoustrack', prevSong);
-        navigator.mediaSession.setActionHandler('nexttrack', nextSong);
-    }
+        function updateTrackList() {
+            trackList.innerHTML = songs.map((song, index) => 
+                `<div class="${index === currentSongIndex ? 'active' : ''}">${song.name}</div>`
+            ).join('');
         }
 
-        function highlightCurrentSong() {
-            playlistItems.forEach((item, index) => {
-                item.classList.toggle('active', index === currentSongIndex);
-            });
-        }
-
-        function updateProgress() {
-            const progress = (audio.currentTime / audio.duration) * 100;
-            progressBar.style.width = progress + '%';
-            timeDisplay.textContent = formatTime(audio.currentTime) + ' / ' + formatTime(audio.duration);
-        }
-
-        function setProgress(event) {
-            const totalWidth = event.currentTarget.clientWidth;
-            const clickX = event.offsetX;
-            const newTime = (clickX / totalWidth) * audio.duration;
-            audio.currentTime = newTime;
+        function updateTimeDisplay() {
+            const currentTime = Math.floor(audio.currentTime);
+            const duration = Math.floor(audio.duration);
+            timeDisplay.textContent = `${formatTime(currentTime)} / ${formatTime(duration)}`;
+            progressBar.style.width = `${(currentTime / duration) * 100}%`;
         }
 
         function formatTime(seconds) {
             const minutes = Math.floor(seconds / 60);
-            const secs = Math.floor(seconds % 60);
+            const secs = seconds % 60;
             return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
         }
+
+        function playSong() {
+            audio.play();
+            isPlaying = true;
+            playPauseButton.textContent = "⏸︎";
+            updateMediaSession();
+        }
+
+        function pauseSong() {
+            audio.pause();
+            isPlaying = false;
+            playPauseButton.textContent = "▶";
+        }
+
+        function updateMediaSession() {
+            if ('mediaSession' in navigator) {
+                navigator.mediaSession.metadata = new MediaMetadata({
+                    title: songs[currentSongIndex].name,
+                    artist: "Yung Ulcer",
+                    album: "Sample Album",
+                    artwork: [
+                        { src: 'img/sticks.png', sizes: '96x96', type: 'image/png' }
+                    ]
+                });
+            }
+        }
+
+        playPauseButton.addEventListener('click', () => {
+            isPlaying ? pauseSong() : playSong();
+        });
+
+        prevButton.addEventListener('click', () => {
+            currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+            audio.src = songs[currentSongIndex].file;
+            updateTrackList();
+            playSong();
+        });
+
+        nextButton.addEventListener('click', () => {
+            currentSongIndex = (currentSongIndex + 1) % songs.length;
+            audio.src = songs[currentSongIndex].file;
+            updateTrackList();
+            playSong();
+        });
+
+        scrubBar.addEventListener('click', (event) => {
+            const scrubberWidth = scrubBar.clientWidth;
+            const clickPosition = event.offsetX;
+            const newTime = (clickPosition / scrubberWidth) * audio.duration;
+            audio.currentTime = newTime;
+        });
+
+        audio.addEventListener('timeupdate', updateTimeDisplay);
+        audio.addEventListener('ended', nextButton.click);
+        
+        updateTrackList();
