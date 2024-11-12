@@ -231,26 +231,21 @@ button {
     border-radius: 50%;
     background-color: black;
 }
-button:active {
-    background-color: white;
-}
 
 button:active {
+      color: black;
     background-color: white;
 }
-        #progress {
+        #scrub-bar {
             width: 100%;
-            height: 20px;
-            position: relative;
-            display: inline-block;
-            background-color: var(--color1);
+            height: 10px;
+            background: #ddd;
             cursor: pointer;
-          max-width: 384px;
         }
-        #progress div {
+        #progress {
             height: 100%;
-            background-color: #FFFFFF;
-            width: 0;          max-width: 384px;
+            background: green;
+            width: 0;
         }
         .active {
             font-weight: bold;
