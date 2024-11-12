@@ -1,6 +1,10 @@
         let currentSongIndex = 0;
         let audio = new Audio(songs[currentSongIndex].file);
+        let isPlaying = false;
+
         const playPauseButton = document.getElementById('play-pause');
+        const prevButton = document.getElementById('prev');
+        const nextButton = document.getElementById('next');
         const timeDisplay = document.getElementById('time-display');
         const progressBar = document.getElementById('progress');
         const scrubBar = document.getElementById('scrub-bar');
@@ -10,6 +14,32 @@
             trackList.innerHTML = songs.map((song, index) => 
                 `<div class="${index === currentSongIndex ? 'active' : ''}">${song.name}</div>`
             ).join('');
+        }
+
+        function updateTimeDisplay() {
+            const currentTime = Math.floor(audio.currentTime);
+            const duration = Math.floor(audio.duration);
+            timeDisplay.textContent = `${formatTime(currentTime)} / ${formatTime(duration)}`;
+            progressBar.style.width = `${(currentTime / duration) * 100}%`;
+        }
+
+        function formatTime(seconds) {
+            const minutes = Math.floor(seconds / 60);
+            const secs = seconds % 60;
+            return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
+        }
+
+        function playSong() {
+            audio.play();
+            isPlaying = true;
+            playPauseButton.textContent = "⏸︎";
+            updateMediaSession();
+        }
+
+        function pauseSong() {
+            audio.pause();
+            isPlaying = false;
+            playPauseButton.textContent = "▶";
         }
 
         function updateMediaSession() {
@@ -29,52 +59,32 @@
     }
 }
 
-        function updateTimeDisplay() {
-            const currentTime = Math.floor(audio.currentTime);
-            const duration = Math.floor(audio.duration);
-            timeDisplay.textContent = `${Math.floor(currentTime / 60)}:${String(currentTime % 60).padStart(2, '0')} / ${Math.floor(duration / 60)}:${String(duration % 60).padStart(2, '0')}`;
-            progressBar.style.width = `${(currentTime / duration) * 100}%`;
-        }
+        playPauseButton.addEventListener('click', () => {
+            isPlaying ? pauseSong() : playSong();
+        });
 
-        function playPause() {
-            if (audio.paused) {
-                audio.play();
-                playPauseButton.textContent = 'PAUSE';
-            } else {
-                audio.pause();
-                playPauseButton.textContent = 'PLAY';
-            }
-        }
-
-        function nextSong() {
-            currentSongIndex = (currentSongIndex + 1) % songs.length;
-            loadSong();
-        }
-
-        function prevSong() {
+        prevButton.addEventListener('click', () => {
             currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
-            loadSong();
-        }
-
-        function loadSong() {
             audio.src = songs[currentSongIndex].file;
-            audio.play();
-            playPauseButton.textContent = 'PAUSE';
             updateTrackList();
-            updateMediaSession();
-        }
+            playSong();
+        });
 
-        audio.addEventListener('ended', nextSong);
-        audio.addEventListener('timeupdate', updateTimeDisplay);
-        playPauseButton.addEventListener('click', playPause);
-        document.getElementById('next').addEventListener('click', nextSong);
-        document.getElementById('prev').addEventListener('click', prevSong);
-        scrubBar.addEventListener('click', (e) => {
+        nextButton.addEventListener('click', () => {
+            currentSongIndex = (currentSongIndex + 1) % songs.length;
+            audio.src = songs[currentSongIndex].file;
+            updateTrackList();
+            playSong();
+        });
+
+        scrubBar.addEventListener('click', (event) => {
             const scrubberWidth = scrubBar.clientWidth;
-            const clickX = e.offsetX;
-            const newTime = (clickX / scrubberWidth) * audio.duration;
+            const clickPosition = event.offsetX;
+            const newTime = (clickPosition / scrubberWidth) * audio.duration;
             audio.currentTime = newTime;
         });
 
+        audio.addEventListener('timeupdate', updateTimeDisplay);
+        audio.addEventListener('ended', nextButton.click);
+        
         updateTrackList();
-        updateMediaSession();
