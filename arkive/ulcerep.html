@@ -18,14 +18,18 @@
 <img id="pageArtwork" src="https://www.jakobutter.net/img/ulcerep.jpg" alt="The Yung Ulcer EP Cover Art" style="margin-bottom:40px; margin-top:30px; width:50%;">
 <br>
 
-<audio id="player" src="/arkive/ulcerep/what.mp3"></audio>
-<button  id="prevButton" onclick="prevSong()">⏮︎</button>
-<button id="playPauseButton" onclick="playPause()">▶</button>
-<button id="nextButton" onclick="nextSong()">⏭︎</button>
-<br>
-<br>
-<div id="progressBar" onclick="scrub(event)"><div></div></div>
-<div id="timeDisplay">0:00 / 0:00</div>
+    <div class="playa">
+        <div class="cooldiv"></div><br>
+    <div>
+        <button id="prev">⏮︎</button>
+        <button id="play-pause">▶</button>
+        <button id="next">⏭︎</button>
+    </div><br>
+          <div id="scrub-bar">
+        <div id="progress"></div>
+          <div id="time-display">0:00 / 0:00</div>
+    </div>
+    </div>
 <br>
 <br>
 <div id="songList"></div>
