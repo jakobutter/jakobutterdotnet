@@ -356,6 +356,7 @@ background-color: var(--color2);
 .ulcerep {
     background-color: #B90017;
     color: black;
+    font-family: Times New Roman;
 }
 
 .ulcerepbutton {
