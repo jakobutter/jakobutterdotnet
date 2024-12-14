@@ -58,7 +58,7 @@ width:100%;
 .greentext
 {
 text-align: left; 
-font-size:24px; 
+font-size:16px; 
 margin:20px;
 color: var(--color1);
 text-shadow: -2px -1px 2px var(--green);
@@ -67,7 +67,7 @@ text-shadow: -2px -1px 2px var(--green);
 .pinktext
 {
 text-align: left; 
-font-size:24px; 
+font-size:16px; 
 margin:20px;
 color: var(--color1);
 text-shadow: -2px -1px 2px var(--pink);
