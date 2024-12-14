@@ -115,10 +115,6 @@ a:hover {
   color: var(--color1);
   background-color: var(--color2);
   }
-  
-.bbutton {
-font-size: 36px;
-   }
 
 .title 
 {text-decoration: underline;
