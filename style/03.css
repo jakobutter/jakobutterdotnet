@@ -1,14 +1,14 @@
 
 :root {
-    --color1: #000000; /*text color*/
-    --color2: #e3fa9e; /*background color, formerly #FF001F, #FF0040 */
+    --color1: #e3fa9e; /*text color*/
+    --color2: #000000; /*background color, formerly #FF001F, #FF0040 */
     --color3: #foffac; /*#foffac*/
     --color4: #000000; /*#a1f4c3*/
     --color4: #000000; /*#ff0073*/
     --color5: #000000; /*#ff0000*/
     --pink: #8888dd;
     --green: #00b300;
-    --deffont: mincho
+    --deffont: Arial
 
 }
 
