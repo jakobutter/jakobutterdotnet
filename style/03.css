@@ -126,6 +126,7 @@ font-size: 36px;
 margin-bottom:12px;
 text-align:left;
 justify-content:left;
+display: grid;
 }
 
 .title:visited {
