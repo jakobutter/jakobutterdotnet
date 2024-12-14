@@ -122,6 +122,10 @@ margin:0;
 font-size: 24px;
 padding-left:20px}
 
+.title:visited {
+var(--color1);
+  }
+
 h1
 {margin:0}
 
@@ -195,7 +199,7 @@ max-width: 1024px;
     color:#000000;
 }
 
-        div[class=griddiv] 
+.griddiv
         {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -203,22 +207,10 @@ max-width: 1024px;
             row-gap: 60px;
             height: 100%;  
             width:100%;  
+            font-size: 24px;
         }
 
-.entbutton:hover
-    {
-      background-image: none;
-      border-image: none;
-      background-color: var(--hovercolor);
-    }
 
-.title {
-font-size:48px; color: var(--color1); text-decoration: underline
-        }
-
-.title:visited {
-var(--color1);
-  }
 
 a[href="https://www.jakobutter.net"] {color: var(--color1); text-decoration: underline);}
 /*a[href="/releases"] {background-image: linear-gradient(45deg, #FFC7EE, #FFF0FA);}
