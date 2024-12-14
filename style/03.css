@@ -123,6 +123,7 @@ margin:0;
 font-size: 36px;
 margin-bottom:12px;
 text-align:left;
+justify-content:left;
 padding-left:20px}
 
 .title:visited {
