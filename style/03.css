@@ -60,8 +60,8 @@ width:100%;
 text-align: left; 
 font-size:24px; 
 margin:20px
-color: var(--green);
-text-shadow: -2px -1px 2px #000000;
+color: black;
+text-shadow: -2px -1px 2px var(--green);
 }
 
 .pinktext
@@ -69,8 +69,8 @@ text-shadow: -2px -1px 2px #000000;
 text-align: left; 
 font-size:24px; 
 margin:20px
-color: var(--pink);
-text-shadow: -2px -1px 2px #000000;
+color: black;
+text-shadow: -2px -1px 2px var(--pink);
 }
 
 img {
