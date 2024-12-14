@@ -1,6 +1,7 @@
 button {
-    text-align:center;
-    align-content:center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: none;
     color: var(--color2);
     width: 50px;
