@@ -6,7 +6,10 @@
     --color4: #000000; /*#a1f4c3*/
     --color4: #000000; /*#ff0073*/
     --color5: #000000; /*#ff0000*/
-    --deffont: Courier New
+    --pink: #000000;
+    --green: #000000;
+    --deffont: Arial
+
 }
 
 body {
@@ -51,6 +54,22 @@ width:100%;
             padding-bottom: 140px; 
         position:relative;
         } 
+
+.greentext
+{
+text-align: left; 
+font-size:24px; 
+margin:20px
+  color: var(--green);
+}
+
+.pinktext
+{
+text-align: left; 
+font-size:24px; 
+margin:20px
+  color: var(--pink);
+}
 
 img {
     image-rendering: pixelated;
