@@ -1,4 +1,6 @@
 button {
+    text-align:center;
+    align-content:center;
     border: none;
     color: var(--color2);
     width: 50px;
