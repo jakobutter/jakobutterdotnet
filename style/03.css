@@ -17,7 +17,6 @@ body {
  color: var(--color1);
  font-family: var(--deffont);
   font-weight: 800;
- font-width: 50%;
 }
 
 @font-face { font-family: Chicago; src: url('Chicago.ttf'); } 
@@ -87,7 +86,7 @@ img {
   box-shadow: -2px -1px 2px var(--color1);
  /*   border-width: 2px; */
   border-style: none; 
-padding: 12px;
+padding: 16px;
 padding-top: 4px;
 padding-bottom: 4px;
 font-size: 24px;
