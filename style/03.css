@@ -61,7 +61,7 @@ text-align: left;
 font-size:16px; 
 margin:20px;
 color: var(--green);
-text-shadow: -1px -1px 2px var(--green);
+text-shadow: 0px 0px 2px var(--green);
 }
 
 .pinktext
@@ -70,7 +70,7 @@ text-align: left;
 font-size:16px; 
 margin:20px;
 color: var(--pink);
-text-shadow: -1px -1px 2px var(--pink);
+text-shadow: 0px 0px 2px var(--pink);
 }
 
 img {
@@ -86,9 +86,7 @@ img {
   box-shadow: -2px -1px 2px var(--color1);
  /*   border-width: 2px; */
   border-style: none; 
-padding: 12px;
-padding-top: 4px;
-padding-bottom: 4px;
+padding: 4px;
 margin-top: 0px;
 margin-bottom: 10px;
 margin: 8px;
