@@ -61,7 +61,7 @@ width:100%;
 text-align: left; 
 font-size:24px; 
 margin:20px
-color: black;
+color: var(--color1);
 text-shadow: -2px -1px 2px var(--green);
 }
 
@@ -70,7 +70,7 @@ text-shadow: -2px -1px 2px var(--green);
 text-align: left; 
 font-size:24px; 
 margin:20px;
-color: black;
+color: var(--color1);
 text-shadow: -2px -1px 2px var(--pink);
 }
 
@@ -84,6 +84,7 @@ img {
 .abutton {
   color: var(--color2);
   background-color: var(--color1);
+  box-shadow: -2px -1px 2px var(--color1);
  /*   border-width: 2px; */
   border-style: solid; 
 padding: 12px;
@@ -92,7 +93,7 @@ padding-bottom: 4px;
 font-size: 24px;
 line-height: 200%;
 text-decoration: none;
-border-radius: 25%
+border-radius: 10%
    }
 
 .abutton:hover {
