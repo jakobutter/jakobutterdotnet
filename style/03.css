@@ -43,7 +43,7 @@ width:100%;
             margin-left: auto; 
             margin-right: auto;
         position:relative;
-        max-width: fit-content; 
+        max-width: 512px; 
         } 
 
 .sitecontent
