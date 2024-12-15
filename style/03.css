@@ -29,6 +29,7 @@ body {
 
 div[class=cooldiv]
         {height: 4px; 
+          max-width:512px;
             width:100%; 
             background-color: var(--color1);
             margin: auto; 
