@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/style/03.css">
+    <title>YouTube to MP3</title>
+    <link rel="icon" href="https://seeklogo.com/images/Y/youtube-music-logo-50422973B2-seeklogo.com.png">
+</head>
+
+<body>
+    <div>
+        <h1>YouTube to MP3</h1>
+        </br>
+        </br>
+        <div class="container">
+            <input type="text" id="convert-input" onkeyup="notEmpty(this)" placeholder="Enter YouTube link">
+            <button type="submit" id="convert-button" disabled>Download as MP3</button>
+            </br>
+            <div class="result">
+                <p id="title"></p>
+            </div>
+
+        </div>
+        <script src="/scripts/nabberscript.js"></script>
+    </div>
+
+    <div>
+        <script>
+            function notEmpty() {
+                if (document.getElementById("convert-input").value === "") {
+                    document.getElementById("convert-button").disabled = true;
+                } else {
+                    document.getElementById("convert-button").disabled = false;
+                }
+            }
+        </script>
+    </div>
+
+
+</body>
+
+
+
+</html>
