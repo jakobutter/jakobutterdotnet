@@ -26,6 +26,7 @@ body {
 @font-face { font-family: pokemon; src: url('pokemon.ttf'); }
 @font-face { font-family: tahoma; src: url('style/tahoma.ttf'); } 
 @font-face { font-family: mincho; src: url('style/mincho.ttf');  }
+@font-face { font-family: ggsans; src: url('style/ggsans.ttf');  }
 
 .cooldiv
         {height: 4px; 
