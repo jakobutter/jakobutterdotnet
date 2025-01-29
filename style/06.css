@@ -36,10 +36,10 @@ body {
 .title-bar-text{font-weight:bold;color:var(--color1);letter-spacing:0;text-align:center}
 .document-content{padding:10px;padding-block-start:8px;max-height:calc(100vh - 173px)}
 .document-content img{max-width:100%}
-.navigation-icons{display:flex;padding:2px;justify-content:center;}
+.navigation-icons{display:flex;padding:2px;justify-content:center;font-size:12px}
 .navigation-icons a,
 .navigation-icons a:link{color:var(--color1);text-decoration:none}
-.navigation-icon{display:flex;flex-direction:column;text-align:center;min-width:50px;min-height:16px;padding:4px;cursor:pointer}
+.navigation-icon{display:flex;flex-direction:column;text-align:center;height:16px;padding:4px;cursor:pointer}
 .navigation-icon:hover{box-shadow:inset -1px -1px var(--color1),inset 1px 1px var(--color1)}
 .navigation-icon:active{box-shadow:inset -1px -1px var(--color1),inset 1px 1px red}body{-webkit-font-smoothing:none;font-size:8pt;background:var(--color3);margin:12px}
 
