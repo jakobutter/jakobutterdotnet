@@ -2,48 +2,105 @@
 <html>
 <head>
 <title>3DS&THC</title>
+<!DOCTYPE html>
+<html lang="en-us">
+
 <head>
-    <title>jakobutter.net</title>
-  <meta http-equiv="Content-Language" content="en-us">
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/02.css">
+    <title>www.jakobutter.net</title>
+    <link href="/style/06.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.jakobutter.net/style/sound.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
   <script src="https://www.jakobutter.net/scripts/musicscript.js" defer></script>
 </head>
-<body class=thc>
+   <style>
+  :root {
+    --color1: #005000; /*text color, formerly #E61413 */
+    --color2: #000000; /*background color, formerly #BCE2EB, #FF0040 */
+        body {font-weight: 500; font-family:rodin;}
+   </style> 
+<body>
+    <div class="center-container">
+        <div class="window">
+                <h2 class="title-bar-text">www.jakobutter.net</h2>
+                          <nav class="navigation-icons">
 
-<div class=thugdiv style=max-width:320px;>
-<h2>3DS&THC</h2>
-<img id="pageArtwork" src="https://www.jakobutter.net/img/3dsthc.png" alt="The Yung Ulcer EP Cover Art" style="margin-bottom:40px; margin-top:30px; width:50%;">
-<br>
 
-<audio id="player" src="/arkive/3dsthc/synthesis.mp3"></audio>
-<button class=thcbutton  id="prevButton" onclick="prevSong()">⏮︎</button>
-<button class=thcbutton id="playPauseButton" onclick="playPause()">▶</button>
-<button class=thcbutton id="nextButton" onclick="nextSong()">⏭︎</button>
-<br>
-<br>
-<div id="progressBar" onclick="scrub(event)"><div></div></div>
-<div id="timeDisplay">0:00 / 0:00</div>
-<br>
-<br>
-<div id="songList"></div>
-<br>
-<br>
-<script>
-var songs = [
-  {name: "SYNTHESIS", file: "/arkive/3dsthc/synthesis.mp3"},
-  {name: "DARK MARKET", file: "/arkive/3dsthc/darkmarket.mp3"},
-  {name: "INTERIOR STORE", file: "/arkive/3dsthc/interiorstore.mp3"},
-  {name: "ERGOSPHERE", file: "/arkive/3dsthc/ergosphere.mp3"},
-  {name: "CAT MATING SEASON", file: "/arkive/3dsthc/catmatingseason.mp3"},
-  {name: "TRANSCEND", file: "/arkive/3dsthc/transcend.mp3"},
-  {name: "CLOUD9INE", file: "/arkive/3dsthc/cloud9ine.mp3"}
-];
-</script>
+    <a class="navigation-icon" href="/releases">
+        <span>releases</span>
+    </a>
 
+    <vr></vr>
+                  
+    <a class="navigation-icon" href="/gallery">
+        <span>gallery</span>
+    </a>
+
+    <vr></vr>
+                  
+    <a class="navigation-icon" href="/entries">
+        <span>entries</span>
+    </a>
+</nav>
+                <footer class="statusbar">
+                    <span class="statusbar-box">© New Paranormal 2025</span>
+                </footer>
+
+        </div>
+      <br>
+        <div class="window">
+            <div class="window-body">
+
+                <div>
+                    <div class="document-container">
+    <div class="document-cell">
+        <div class="inset">
+            <div class="document">
+                <div class="player-content">
+      
+    <div class="playa">
+        <div class="cooldiv"></div><br>
+    <div>
+        <button id="prev">⏮︎</button>
+        <button id="play-pause">▶</button>
+        <button id="next">⏭︎</button>
+    </div><br>
+          <div id="scrub-bar">
+        <div id="progress"></div>
+          <div id="time-display">0:00 / 0:00</div>
+    </div> 
+    </div>
+  
+<div class=sitecontent>
+  <h1>3DS&THC</h1>
+                    <img class="thugimg" id="pageArtwork" src="https://www.jakobutter.net/img/3dsthc.png" width="256">
+<br><br>
+    <div id="track-list"></div>
+  <br>
+
+      <script>
+        var songs = [
+{name: "Synthesis", file: "https://www.jakobutter.net/arkive/3dsnthc/synthesis.mp3", artist: "Yung Ulcer", album: "3DS&THC"},
+{name: "Dark Market", file: "https://www.jakobutter.net/arkive/3dsnthc/darkmarket.mp3", artist: "Yung Ulcer", album: "3DS&THC"},
+{name: "Interior Store", file: "https://www.jakobutter.net/arkive/3dsnthc/interiorstore.mp3", artist: "Yung Ulcer", album: "3DS&THC"},
+{name: "Ergosphere", file: "https://www.jakobutter.net/arkive/3dsnthc/ergosphere.mp3", artist: "Yung Ulcer", album: "3DS&THC"},
+{name: "HTML Jacker", file: "https://www.jakobutter.net/arkive/3dsnthc/htmljacker.mp3", artist: "Yung Ulcer", album: "3DS&THC"},
+{name: "Cat Mating Season", file: "https://www.jakobutter.net/arkive/3dsnthc/catmatingseason.mp3", artist: "Yung Ulcer", album: "3DS&THC"},
+{name: "Transcend", file: "https://www.jakobutter.net/arkive/3dsnthc/transcend.mp3", artist: "Yung Ulcer", album: "3DS&THC"},
+{name: "Cloud9ine", file: "https://www.jakobutter.net/arkive/3dsnthc/cloud9ine.mp3", artist: "Yung Ulcer", album: "3DS&THC"}
+        ];
+        </script>
+                </div>
+            </div>
+        </div>
+    </div>
+    
 </div>
-
+                </div>
+                
+            </div>
+        </div>
+</div>
+<br><br><br><br><br><br><br><br><br><br>
 </body>
 </html>
