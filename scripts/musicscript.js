@@ -1,3 +1,4 @@
+
     let currentSongIndex = 0;
     let audio = new Audio(songs[currentSongIndex].file);
     let isPlaying = false;
@@ -12,7 +13,7 @@
 
     function updateTrackList() {
         trackList.innerHTML = songs.map((song, index) => 
-            `<div class="${index === currentSongIndex ? 'active' : ''}">${song.name}</div>`
+            `<div class="${index === currentSongIndex ? 'active' : ''}" onclick="playSelectedSong(${index})">${index === currentSongIndex ? '<strong>' + song.name + '</strong>' : song.name}</div>`
         ).join('');
     }
 
@@ -51,6 +52,13 @@
 
     function nextSong() {
         currentSongIndex = (currentSongIndex + 1) % songs.length;
+        audio.src = songs[currentSongIndex].file;
+        updateTrackList();
+        playSong();
+    }
+
+    function playSelectedSong(index) {
+        currentSongIndex = index;
         audio.src = songs[currentSongIndex].file;
         updateTrackList();
         playSong();
