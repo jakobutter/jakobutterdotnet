@@ -17,7 +17,7 @@ body {
 }
 
 @font-face { font-family: Chicago; src: url('Chicago.ttf'); } 
-@font-face { font-family: handelgothic; src: url('handelgothic.otf'); }
+@font-face { font-family: handelgothic; src: url('handelgothic.ttf'); }
 @font-face { font-family: simsun; src: url('simsun.ttf'); } 
 @font-face { font-family: rodin; src: url('rodin.otf'); } 
 @font-face { font-family: pokemon; src: url('pokemon.ttf'); }
